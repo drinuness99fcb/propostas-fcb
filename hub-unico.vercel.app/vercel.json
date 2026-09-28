@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/pousada", "destination": "/pousada/index.html" },
+    { "source": "/corretor", "destination": "/corretor/index.html" },
+    { "source": "/paulo", "destination": "/corretor/index.html" }
+  ]
+}

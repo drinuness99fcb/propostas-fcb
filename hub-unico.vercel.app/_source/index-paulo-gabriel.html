@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>FCB Automações — Apresentação Comercial para Corretores de Imóveis</title>
+<meta name="description" content="Como automatizar a qualificação de leads imobiliários e fechar mais sem trabalhar mais — proposta exclusiva para Paulo Gabriel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#06101a;
+  --navy:#1e3a5f;
+  --navy-mid:#274d7a;
+  --slate:#1e293b;
+  --ink:#1e293b;
+  --gold:#c9a84c;
+  --gold-glow:#d4a853;
+  --gold-light:#fdf8e8;
+  --ice:#f8f9fb;
+  --line:#e4e8ef;
+  --white:#ffffff;
+  --muted:#64748b;
+  --dor:#e53e3e;
+  --dor-light:#fff5f5;
+  --gain:#0d8a6e;
+  --gain-light:#f0fdf8;
+  --shadow:0 24px 60px rgba(30,58,95,0.10);
+  --shadow-lg:0 30px 80px rgba(30,58,95,0.20);
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --font-head:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--obsidian);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow:hidden}
+.deck{position:relative;height:100vh;height:100dvh;display:flex;background:var(--white)}
+
+/* LOGO TOPO DIREITO */
+.logo-fcb{position:fixed;top:20px;right:30px;z-index:30;display:flex;align-items:center;gap:10px;text-decoration:none;pointer-events:none}
+.logo-badge{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#0d1f35);color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:14px;box-shadow:0 6px 16px rgba(30,58,95,.35)}
+.logo-text{display:flex;flex-direction:column}
+.logo-title{font-family:var(--font-head);font-weight:800;font-size:14px;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:8px;font-weight:700;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
+
+/* TRILHO LATERAL */
+.rail{width:76px;flex:0 0 76px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:22px 0;background:var(--ice);z-index:22}
+.marca-rail{font-family:var(--font-head);font-weight:800;font-size:12px;line-height:1.1;text-align:center;letter-spacing:.02em;color:var(--navy);margin-bottom:18px}
+.marca-rail span{display:block;font-weight:700;font-size:7px;letter-spacing:.22em;color:var(--gold);margin-top:3px}
+.dots{display:flex;flex-direction:column;gap:8px;align-items:center;flex:1;overflow-y:auto;padding:4px 0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer;transition:.22s}
+.dot:hover{background:var(--gold-glow);transform:scale(1.2)}
+.dot.on{background:var(--navy);box-shadow:0 0 0 4px rgba(30,58,95,.22);height:14px;border-radius:99px}
+
+/* PALCO PRINCIPAL */
+.palco{flex:1;position:relative;overflow:hidden;background:var(--white)}
+.slide{position:absolute;inset:0;padding:68px 56px 78px;display:none;flex-direction:column;justify-content:center;overflow-y:auto;background:var(--white)}
+.slide.ativo{display:flex;animation:entra .4s cubic-bezier(0.16,1,0.3,1)}
+@keyframes entra{from{opacity:0;transform:translateX(2.5%)}to{opacity:1;transform:none}}
+
+
+/* WHATSAPP & NO-JS FALLBACK (VISUALIZADOR NATIVO DO WHATSAPP / QUICKLOOK NO IPHONE) */
+.no-js-banner { display: none; }
+
+html:not(.js), html:not(.js) body {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  background: var(--ice) !important;
+}
+html:not(.js) .deck {
+  height: auto !important;
+  min-height: 100vh !important;
+  display: block !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+html:not(.js) .rail,
+html:not(.js) .hud,
+html:not(.js) .progress-bar-wrap,
+html:not(.js) .menu {
+  display: none !important;
+}
+html:not(.js) .logo-fcb {
+  position: static !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+html:not(.js) .no-js-banner {
+  display: block !important;
+  background: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--navy);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin: 12px 14px;
+  text-align: center;
+}
+html:not(.js) .palco {
+  height: auto !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  padding: 14px 14px 60px !important;
+  max-width: 720px;
+  margin: 0 auto;
+}
+html:not(.js) .slide {
+  position: static !important;
+  display: flex !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 24px 18px !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 4px 18px rgba(30,58,95,0.06) !important;
+  overflow: visible !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* TIPOGRAFIA */
+.olho{font-family:var(--font-head);font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--navy);font-size:clamp(11px,.9vw,14px);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.olho.dor{color:var(--dor)}
+.olho.gold{color:var(--gold)}
+.olho.gain{color:var(--gain)}
+.olho::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+
+h1{font-family:var(--font-head);font-size:clamp(36px,4.6vw,74px);line-height:.98;letter-spacing:-.045em;color:var(--navy);font-weight:600;max-width:18ch}
+h2{font-family:var(--font-head);font-size:clamp(26px,3.2vw,50px);line-height:1.03;letter-spacing:-.035em;color:var(--navy);font-weight:600;max-width:22ch}
+h1 b,h2 b{font-weight:800;color:var(--navy)}
+h1 b.gold,h2 b.gold{color:var(--gold)}
+h1 b.dor,h2 b.dor{color:var(--dor)}
+h1 b.gain,h2 b.gain{color:var(--gain)}
+.slide h1::after,.slide h2::after{content:"";display:block;width:76px;height:4.5px;border-radius:9px;background:linear-gradient(90deg,var(--navy),var(--navy-mid));margin-top:18px}
+.slide.tem-dor h2::after{background:linear-gradient(90deg,var(--dor),#f56565)}
+.slide.tem-gold h2::after{background:linear-gradient(90deg,var(--gold),var(--gold-glow))}
+.slide.tem-gain h2::after{background:linear-gradient(90deg,var(--gain),#10b981)}
+
+h3{font-family:var(--font-head);font-size:16px;line-height:1.2;color:var(--navy);font-weight:700;margin-bottom:6px}
+.lede{font-size:clamp(14px,1.15vw,18px);line-height:1.48;color:#334155;max-width:62ch;margin-top:16px}
+.lede b{font-weight:700;color:var(--navy)}
+
+.duas{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,3.4vw,56px);align-items:center}
+.duas.inv{grid-template-columns:.95fr 1.05fr}
+
+/* CHAT MOCKUP */
+.conversa{background:var(--ice);border:1px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:11px;max-width:440px;width:100%;box-shadow:var(--shadow)}
+.conversa .topo{display:flex;align-items:center;gap:11px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#0d1f35);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}
+.topo b{font-size:13.5px;color:var(--navy);display:block}
+.topo em{font-family:var(--mono);font-size:9.5px;color:var(--muted);font-style:normal;display:block}
+.balao{max-width:88%;padding:10px 14px;border-radius:15px;font-size:13px;line-height:1.45;opacity:0;transform:translateY(8px);animation:sobe .45s forwards}
+@keyframes sobe{to{opacity:1;transform:none}}
+.balao.dele{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start;color:var(--ink)}
+.balao.meu{background:var(--navy);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.balao.meu.ia{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border:1px solid rgba(255,255,255,.15)}
+.balao.meu.ia .ia-tag{display:inline-block;font-family:var(--mono);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(201,168,76,.3);padding:2px 6px;border-radius:99px;margin-bottom:4px;color:var(--gold-glow)}
+.hora{font-family:var(--mono);font-size:9px;opacity:.72;display:block;margin-top:4px}
+.silencio{align-self:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dor);border-top:1px dashed rgba(229,62,62,.45);border-bottom:1px dashed rgba(229,62,62,.45);padding:7px 0;width:100%;text-align:center;opacity:0;animation:sobe .5s forwards}
+.badge-ok{background:#dcfce7;border:1px solid #bbf7d0;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#166534;font-weight:700;opacity:0;animation:sobe .5s forwards}
+.badge-err{background:#fee2e2;border:1px solid #fecaca;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#991b1b;font-weight:700}
+
+/* CARTÕES EM GRADE */
+.grade{display:grid;gap:14px;margin-top:24px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.cartao{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.2s}
+.cartao:hover{border-color:var(--navy);box-shadow:0 8px 24px rgba(30,58,95,.08);transform:translateY(-2px)}
+.cartao p{font-size:13px;line-height:1.48;color:var(--muted)}
+.cartao .num{font-family:var(--mono);font-weight:800;font-size:10px;color:var(--navy);letter-spacing:.18em;display:block;margin-bottom:8px;text-transform:uppercase}
+.cartao.dor{border-color:rgba(229,62,62,.25);background:var(--dor-light)}
+.cartao.dor .num{color:var(--dor)}
+.cartao.bom{background:var(--gain-light);border-color:rgba(13,138,110,.3)}
+.cartao.bom .num{color:var(--gain)}
+.cartao.gold{background:var(--gold-light);border-color:rgba(201,168,76,.35)}
+.cartao.gold .num{color:var(--gold)}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;max-width:840px}
+.chip{font-family:inherit;font-size:13.5px;padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(30,58,95,.25)}
+.chip i{font-style:normal;font-size:14px}
+
+/* CALCULADORA */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:24px}
+.controles{display:flex;flex-direction:column;gap:18px}
+.controle label{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.controle label b{font-family:var(--mono);font-size:15px;color:var(--navy);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--navy);height:20px;cursor:pointer}
+.resultado{background:linear-gradient(145deg,var(--navy),#0d1f35);border-radius:26px;padding:28px;color:#fff;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08)}
+.resultado .rot{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-glow)}
+.cifra{font-family:var(--font-head);font-size:clamp(28px,3.8vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;margin:6px 0 4px}
+.cifra.dor{color:#fca5a5}
+.linha2{display:flex;gap:20px;margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px;flex-wrap:wrap}
+.linha2 span{font-family:var(--mono);font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#94a3b8;display:block}
+.linha2 b{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--gold-glow)}
+.resultado .sub{font-size:12px;color:#cbd5e1;line-height:1.45;margin-top:12px}
+.aviso-espera{background:rgba(229,62,62,.18);border:1px solid rgba(229,62,62,.4);border-radius:12px;padding:10px 14px;margin-top:12px}
+.aviso-espera span{font-family:var(--mono);font-weight:800;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#fca5a5;display:block;margin-bottom:4px}
+.aviso-espera b{font-family:var(--font-head);font-size:22px;font-weight:800;color:#fca5a5}
+
+/* PERGUNTAS DE IMPACTO */
+.perguntas{list-style:none;margin-top:24px;max-width:860px;border-top:1px solid var(--line)}
+.perguntas li{border-bottom:1px solid var(--line);padding:18px 2px;display:flex;gap:20px;align-items:baseline}
+.perguntas li span{font-family:var(--mono);font-weight:800;font-size:13px;color:var(--navy);flex:0 0 28px}
+.perguntas li p{font-family:var(--font-head);font-size:clamp(16px,1.55vw,22px);letter-spacing:-.025em;line-height:1.25;color:var(--navy)}
+
+/* LISTAS */
+.itens{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:11px}
+.itens li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.45}
+.itens li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--navy),var(--navy-mid));margin-top:6px}
+.itens li b{font-weight:700;color:var(--navy)}
+.itens li span{color:var(--muted)}
+
+/* CRM MOCKUP */
+.crm-mock{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);max-width:520px;width:100%}
+.crm-topo{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.crm-topo b{font-size:13.5px;color:var(--navy);font-weight:800}
+.crm-tag{font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:99px;font-weight:700;text-transform:uppercase}
+.crm-tag.novo{background:#dbeafe;color:#1e40af}
+.crm-tag.qual{background:#fef3c7;color:#b45309}
+.crm-tag.quente{background:#fee2e2;color:#991b1b}
+.crm-tag.visita{background:#dcfce7;color:#166534}
+.crm-tag.fechado{background:#ede9fe;color:#6d28d9}
+.crm-linha{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.crm-box{background:var(--ice);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.crm-box span{display:block;font-family:var(--mono);font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.crm-box b{font-size:13px;color:var(--navy);font-weight:700}
+.crm-btn{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:11px;font-family:var(--font-head);font-weight:700;font-size:12.5px;text-align:center;display:block;width:100%;cursor:pointer;margin-top:14px;box-shadow:0 4px 14px rgba(30,58,95,.3)}
+.pipeline{display:flex;gap:6px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
+.pipe-col{flex:0 0 90px;background:var(--ice);border-radius:10px;padding:8px;border:1px solid var(--line)}
+.pipe-col h5{font-family:var(--mono);font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pipe-card{background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px;margin-bottom:5px;font-size:10px;color:var(--navy);font-weight:600;line-height:1.3}
+.pipe-card .val{font-family:var(--mono);font-size:9px;color:var(--gold);font-weight:800;display:block;margin-top:2px}
+
+/* PASSOS */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-top:4px solid;border-image:linear-gradient(90deg,var(--navy),var(--navy-mid)) 1}
+.passo{padding:18px 20px 0 0;border-right:1px solid var(--line)}
+.passo:last-child{border-right:0}
+.passo .q{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.18em;color:var(--navy);display:block;margin-bottom:8px;text-transform:uppercase}
+.passo b{display:block;font-family:var(--font-head);font-size:15px;color:var(--navy);margin-bottom:6px}
+.passo p{font-size:13px;color:var(--muted);line-height:1.45}
+
+/* TABELA DE OBJEÇÕES */
+.comp{width:100%;border-collapse:collapse;margin-top:22px;font-size:13.5px}
+.comp th,.comp td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.comp thead th{font-family:var(--font-head);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy)}
+.comp thead th.neg{color:var(--muted);border-bottom-color:var(--line)}
+.comp tbody th{font-weight:700;color:var(--ink);width:35%}
+.comp td.sim{color:var(--navy);background:var(--gain-light);font-weight:600}
+
+/* BARRA DE PROGRESSO */
+.progress-bar-wrap{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(0,0,0,.08);z-index:90}
+.progress-bar{height:100%;width:5.26%;background:linear-gradient(90deg,var(--navy),var(--gold));transition:width .25s ease}
+
+/* HUD RODAPÉ */
+.hud{position:fixed;left:76px;right:0;bottom:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-top:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(8px);font-size:11.5px;color:#64748b;font-weight:700;z-index:20}
+.hud-nav{display:flex;align-items:center;gap:8px}
+.hud button{font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:7px 15px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center}
+.hud button:hover{border-color:var(--navy);color:var(--navy)}
+.hud button.btn-primary{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 3px 10px rgba(30,58,95,.25)}
+.hud button.btn-primary:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.pos-badge{font-family:var(--mono);font-size:11.5px;font-weight:800;color:var(--navy);background:var(--gold-light);padding:5px 11px;border-radius:99px;border:1px solid rgba(201,168,76,.35);white-space:nowrap}
+.hud .dicas span{margin-left:12px}
+
+/* MENU SUMÁRIO */
+.menu{position:fixed;inset:0;background:var(--white);z-index:50;display:none;padding:44px 56px;overflow-y:auto}
+.menu.on{display:block}
+.menu h2{margin-bottom:6px}
+.menu .cap{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin:24px 0 8px}
+.menu ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.menu li button{width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--navy);font-family:inherit;font-size:13px;padding:9px 4px;cursor:pointer;display:flex;gap:11px}
+.menu li button:hover{color:var(--gold)}
+.menu li button i{font-family:var(--mono);font-size:10px;color:var(--muted);font-style:normal;flex:0 0 22px}
+
+/* CTA */
+.cta-link{display:inline-flex;align-items:center;margin-top:24px;font-family:var(--font-head);font-weight:800;font-size:15px;padding:14px 28px;border-radius:99px;background:var(--navy);color:#fff;text-decoration:none;transition:.2s;box-shadow:0 10px 25px rgba(30,58,95,.3)}
+.cta-link:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+
+.fit{width:100%;transform-origin:center center}
+
+/* BADGE DESTAQUE */
+.destaque-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-light);border:1px solid rgba(201,168,76,.4);border-radius:99px;padding:6px 14px;font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+
+/* FEATURE CARD ESPECIAL */
+.feat{display:flex;gap:14px;align-items:flex-start;background:var(--ice);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:10px;transition:.2s}
+.feat:hover{border-color:var(--navy);transform:translateX(4px)}
+.feat-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;display:grid;place-items:center;font-size:16px;flex:0 0 36px}
+.feat-icon.gold{background:linear-gradient(135deg,var(--gold),var(--gold-glow))}
+.feat h4{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.feat p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.feat .novo{font-family:var(--mono);font-size:8px;font-weight:800;letter-spacing:.14em;background:var(--gold-light);color:var(--gold);padding:2px 7px;border-radius:99px;text-transform:uppercase;margin-left:6px;vertical-align:middle}
+
+/* SIMULADOR FINANCIAMENTO */
+.simul{background:linear-gradient(145deg,var(--navy),#0d1f35);border-radius:20px;padding:20px;color:#fff;max-width:400px}
+.simul .s-topo{font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-glow);margin-bottom:12px}
+.simul .s-linha{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 0;font-size:13px}
+.simul .s-linha span{color:#94a3b8}
+.simul .s-linha b{color:#fff;font-weight:700}
+.simul .s-resultado{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:12px;padding:14px;margin-top:12px;text-align:center}
+.simul .s-resultado span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-glow);display:block;margin-bottom:4px}
+.simul .s-resultado b{font-family:var(--font-head);font-size:32px;font-weight:800;color:var(--gold-glow)}
+.simul .s-resultado em{display:block;font-style:normal;font-size:11px;color:#94a3b8;margin-top:4px}
+.simul .s-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(13,138,110,.2);border:1px solid rgba(13,138,110,.4);border-radius:99px;padding:6px 12px;margin-top:10px;font-size:11px;color:#6ee7b7;font-weight:700}
+
+/* MATCH CARD */
+.match-mock{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);max-width:460px}
+.match-topo{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.match-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-glow));display:grid;place-items:center;font-size:18px}
+.match-topo b{font-size:13px;color:var(--navy);font-weight:800;display:block}
+.match-topo em{font-size:11px;color:var(--muted);font-style:normal}
+.match-item{display:flex;align-items:center;gap:10px;padding:9px;background:var(--ice);border-radius:10px;margin-bottom:7px;border:1px solid var(--line)}
+.match-item .mi-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;display:grid;place-items:center;font-size:10px;font-weight:800;flex:0 0 28px}
+.match-item .mi-info b{display:block;font-size:12px;color:var(--navy);font-weight:700}
+.match-item .mi-info span{font-size:11px;color:var(--muted)}
+.match-item .mi-btn{margin-left:auto;background:var(--navy);color:#fff;border:0;border-radius:7px;padding:5px 10px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap}
+
+/* RELATÓRIO CARD */
+.relat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);max-width:400px}
+.relat-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.relat-topo b{font-size:13px;color:var(--navy);font-weight:800}
+.relat-topo span{font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.relat-stat{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.relat-box{background:var(--ice);border:1px solid var(--line);border-radius:10px;padding:10px}
+.relat-box span{font-family:var(--mono);font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;display:block}
+.relat-box b{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--navy)}
+.relat-box.high b{color:var(--gain)}
+.relat-box.warn b{color:var(--dor)}
+.relat-bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px}
+.relat-bar div{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--navy),var(--navy-mid))}
+.relat-nota{background:var(--gold-light);border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:10px;font-size:11.5px;color:var(--navy);line-height:1.45}
+
+
+/* ANIMAÇÕES DE TRANSIÇÃO DIRECIONAL */
+@keyframes slideFromRight {
+  0% { opacity: 0; transform: translate3d(24px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes slideFromLeft {
+  0% { opacity: 0; transform: translate3d(-24px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.slide.ativo.entra-dir {
+  animation: slideFromRight .28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.slide.ativo.entra-esq {
+  animation: slideFromLeft .28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* SLIDER TOUCH OTIMIZADO */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+  outline: none;
+  touch-action: pan-x;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  border: 2px solid #fff;
+}
+
+/* RESPONSIVIDADE */
+@media(max-width:960px){
+  body{overflow:hidden;height:100dvh}
+  .deck{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+  .rail{display:none !important}
+  .palco{flex:1;height:100%;overflow:hidden;position:relative;touch-action:pan-y}
+  .slide{position:absolute;inset:0;height:100%;max-height:100%;padding:56px 16px calc(84px + env(safe-area-inset-bottom, 16px));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;display:none;flex-direction:column;justify-content:flex-start;touch-action:pan-y}
+  .slide.ativo{display:flex}
+  .fit{width:100%;height:auto;transform:none !important;padding-bottom:14px}
+  h1{font-size:clamp(22px,6vw,32px);line-height:1.12;letter-spacing:-.03em;max-width:100%}
+  h2{font-size:clamp(19px,5vw,26px);line-height:1.15;letter-spacing:-.025em;max-width:100%}
+  h3{font-size:15px}
+  .lede{font-size:13.5px;line-height:1.46;margin-top:10px;max-width:100%}
+  .olho{font-size:10.5px;letter-spacing:.14em;margin-bottom:8px}
+  .slide h1::after,.slide h2::after{width:46px;height:3.5px;margin-top:12px}
+  .duas,.duas.inv,.calc{grid-template-columns:1fr;gap:18px}
+  .g4,.g3,.g2,.g5{grid-template-columns:1fr;gap:10px}
+  .cartao{padding:14px 16px;border-radius:14px}
+  .cartao p{font-size:12.5px;line-height:1.45}
+  .conversa{max-width:100%;padding:14px;border-radius:18px;gap:9px}
+  .balao{font-size:12.5px;padding:8px 12px;max-width:92%}
+  .chips{gap:7px;margin-top:14px}
+  .chip{font-size:12px;padding:8px 13px}
+  .calc{gap:16px}
+  .controles{gap:12px}
+  .controle label{font-size:12px}
+  .resultado{padding:18px 16px;border-radius:18px}
+  .cifra{font-size:clamp(22px,7vw,32px)}
+  .linha2{gap:14px}
+  .linha2 b{font-size:17px}
+  .passos{grid-template-columns:1fr;gap:14px;border-top:none;margin-top:18px}
+  .passo{border-right:none;border-left:3px solid var(--navy);padding:0 0 0 14px}
+  .crm-mock,.match-mock,.relat,.simul{max-width:100%}
+  .crm-linha{grid-template-columns:1fr;gap:8px}
+  .logo-fcb{top:10px;right:14px;gap:7px}
+  .logo-badge{width:28px;height:28px;font-size:11px;border-radius:7px}
+  .logo-title{font-size:11px}
+  .logo-sub{font-size:6.5px;letter-spacing:.1em}
+  .menu{padding:20px 16px;padding-bottom:100px}
+  .menu h2{font-size:19px}
+  .menu ol{grid-template-columns:1fr;gap:4px}
+  .menu li button{padding:12px 6px;font-size:13.5px}
+  .hud{left:0;right:0;bottom:0;height:auto;min-height:58px;padding:8px 12px;padding-bottom:max(12px, env(safe-area-inset-bottom, 12px));flex-direction:row;justify-content:center;align-items:center;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);z-index:9999;touch-action:manipulation}
+  .hud-nav{display:flex;align-items:center;gap:8px;width:100%;max-width:480px;justify-content:space-between}
+  .hud button{height:44px;min-height:44px;padding:0 14px;font-size:13px;font-weight:700;border-radius:99px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;display:inline-flex;align-items:center;justify-content:center}
+  .desktop-only{display:none !important}
+  #btn-menu{flex:0 0 44px;width:44px;padding:0;font-size:17px;background:var(--ice);border:1px solid var(--line);color:var(--navy)}
+  #ant{flex:1;max-width:90px;background:var(--ice);border:1px solid var(--line);color:var(--navy)}
+  #prox{flex:1.5;background:linear-gradient(135deg,var(--navy),var(--navy-mid));border:1px solid var(--navy);color:#fff;box-shadow:0 4px 14px rgba(30,58,95,.35);font-weight:800;font-size:14px}
+  #prox:active{transform:scale(0.97);background:var(--navy)}
+  #ant:active,#btn-menu:active{transform:scale(0.97);background:#e2e8f0}
+  .pos-badge{font-size:11.5px;padding:5px 9px;flex:0 0 auto}
+  .pipeline{gap:4px}
+  .pipe-col{flex:0 0 80px}
+  .comp{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:12px;margin-top:16px}
+  .comp th,.comp td{padding:8px 10px}
+  .relat-stat{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- BARRA DE PROGRESSO -->
+<div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+<div class="deck" id="deck">
+
+  <!-- LOGO TOPO -->
+  <a class="logo-fcb" href="#">
+    <div class="logo-badge">FCB</div>
+    <div class="logo-text">
+      <div class="logo-title">FCB Automações</div>
+      <div class="logo-sub">Imóveis &amp; IA</div>
+    </div>
+  </a>
+
+  <!-- TRILHO LATERAL -->
+  <nav class="rail" aria-label="Navegação dos slides">
+    <div class="marca-rail">FCB<span>IMÓVEIS</span></div>
+    <div class="dots" id="dots"></div>
+  </nav>
+
+  <!-- PALCO -->
+  <main class="palco" id="palco">
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 1 · CAPA -->
+    <!-- ============================================================ -->
+    <section class="slide ativo" data-cap="Abertura" data-tit="Capa">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="destaque-badge">🏠 Proposta Exclusiva · Paulo Gabriel</div>
+            <h1>Todo lead começa com uma mensagem que ninguém <b class="gold">qualificou a tempo</b></h1>
+            <p class="lede">Nos próximos minutos não vamos falar de tecnologia complicada. Vamos olhar para os leads que chegam todos os dias no seu WhatsApp — e quanto de comissão está ficando na mesa por falta de um filtro inteligente.</p>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar">CL</div>
+                <div><b>Comprador Potencial</b><em>Via Instagram DM · Sábado 21h</em></div>
+              </div>
+              <div class="balao dele" style="animation-delay:.15s">
+                Vi o apê de R$ 650k no seu TikTok. Tem disponível? É em financiamento? Qual o valor de entrada?
+                <span class="hora">21:08</span>
+              </div>
+              <div class="silencio" style="animation-delay:.45s">
+                — qualificação manual em fila · aguardando pessoa —
+              </div>
+              <div class="balao dele" style="animation-delay:.8s">
+                Já fechei com outro corretor que me respondeu na hora. Valeu!
+                <span class="hora">23:44</span>
+              </div>
+              <div class="balao meu" style="animation-delay:1.1s">
+                Oi! Desculpe a demora, estava em atendimento. Ainda temos disponibilidade...
+                <span class="hora">09:12 (Domingo)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2 · QUEM SOMOS -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Abertura" data-tit="Quem é a FCB Automações">
+      <div class="fit">
+        <div class="olho">Especialistas em Automação Comercial</div>
+        <h2>Quem é a <b>FCB Automações</b></h2>
+        <p class="lede">Plataforma de inteligência artificial e automação de funil comercial especializada em profissionais autônomos de alta performance. Transformamos o atendimento manual em um sistema que <b>qualifica, organiza e entrega leads quentes</b> prontos para o fechamento.</p>
+        <div class="grade g4" style="margin-top:28px">
+          <div class="cartao bom">
+            <span class="num">01 · 24 Horas</span>
+            <h3>Qualificação 24/7</h3>
+            <p>O comprador pesquisa imóvel à noite e no fim de semana. A qualificação acontece em menos de 2 min, com ou sem você.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">02 · Zero Perda</span>
+            <h3>Nenhum Lead Frio</h3>
+            <p>Follow-up automático reengaja leads mornos sem intervenção. Mais de 35% dos negócios fecham no segundo contato.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">03 · Organização</span>
+            <h3>Funil Visível</h3>
+            <p>Cada lead em seu estágio, histórico completo, imóveis de interesse e próximo passo — tudo em um painel simples.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">04 · Foco</span>
+            <h3>Você só Fecha</h3>
+            <p>A IA filtra os curiosos. Paulo recebe apenas quem tem orçamento, urgência e intenção real de compra.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 3 · DE ONDE VÊM OS LEADS (chips) -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Situação" data-tit="Por onde chegam seus leads">
+      <div class="fit">
+        <div class="olho">Diagnóstico de Situação</div>
+        <h2>Por onde chegam os seus <b>compradores hoje?</b></h2>
+        <p class="lede">Marque os canais ativos. Cada canal é uma porta de entrada que precisa de qualificação rápida — e os compradores de imóvel não esperam.</p>
+        <div class="chips">
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>📸</i> Instagram DM</button>
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>🎵</i> TikTok (link na bio)</button>
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>💬</i> WhatsApp direto</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>🏠</i> Viva Real / ZAP</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>🔍</i> Google (tráfego pago)</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>👥</i> Indicações / rede</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>📍</i> Google Meu Negócio</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>📞</i> Ligações diretas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 4 · COMO VOCÊ QUALIFICA (chips) -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Situação" data-tit="Como você qualifica hoje">
+      <div class="fit">
+        <div class="olho">Diagnóstico de Situação</div>
+        <h2>E como você <b>qualifica</b> esses leads hoje?</h2>
+        <p class="lede">Sem julgamento — a maioria dos corretores autônomos opera assim. O que importa é o que essa combinação custa em comissões perdidas.</p>
+        <div class="chips">
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>🤖</i> Bot inicial de atendimento</button>
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>👤</i> Uma pessoa qualifica manualmente</button>
+          <button class="chip" aria-pressed="true" onclick="toggleChip(this)"><i>💬</i> Conversa manual no WhatsApp</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>📊</i> Planilha de controle</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>🧠</i> Memória / bom senso</button>
+          <button class="chip" aria-pressed="false" onclick="toggleChip(this)"><i>🤷</i> Nada estruturado ainda</button>
+        </div>
+        <div style="margin-top:22px;background:var(--gold-light);border:1px solid rgba(201,168,76,.35);border-radius:14px;padding:16px 20px;max-width:680px">
+          <b style="font-family:var(--font-head);font-size:14px;color:var(--navy);display:block;margin-bottom:6px">💡 Você já deu o primeiro passo — o bot inicial.</b>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.5">Mas o bot responde a <em style="font-style:normal;font-weight:700;color:var(--navy)">primeira mensagem</em>. Quem faz as 5 perguntas de qualificação que definem se o lead vale o seu tempo? Esse é o gargalo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5 · O LEAD QUE MORREU NO MEIO DO CAMINHO -->
+    <!-- ============================================================ -->
+    <section class="slide tem-dor" data-cap="Problema" data-tit="O lead que morreu no meio">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho dor">O Custo Oculto</div>
+            <h2>O que acontece entre o primeiro contato e a <b class="dor">visita marcada?</b></h2>
+            <p class="lede">O bot responde na hora (ótimo). Mas a qualificação vai para a fila manual — e lead imobiliário de Instagram/TikTok é impulso. Em 15 minutos sem resposta qualificada, o comprador já está no concorrente.</p>
+            <ul class="itens" style="margin-top:20px">
+              <li><b>Pesquisa HubSpot:</b><span> lead contactado em até 5 min tem 9x mais chance de converter. Depois de 1h, cai para menos de 10%.</span></li>
+              <li><b>TikTok e Instagram geram impulso:</b><span> quem viu o vídeo do imóvel às 22h quer a resposta às 22h, não amanhã de manhã.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar" style="background:var(--dor)">R$</div>
+                <div><b>Lead via TikTok · Lançamento</b><em>Sinal R$ 499 · Parcelas R$ 899</em></div>
+              </div>
+              <div class="balao dele" style="animation-delay:.1s">
+                Oi Paulo! Vi seu vídeo do lançamento. Tenho interesse. Como funciona a entrada parcelada?
+                <span class="hora">21:15</span>
+              </div>
+              <div class="balao meu ia" style="animation-delay:.4s">
+                <span class="ia-tag">Bot · Resposta automática</span><br>
+                Olá! Fico feliz pelo seu interesse 😊 Vou te passar para nossa equipe de qualificação agora!
+                <span class="hora">21:15</span>
+              </div>
+              <div class="silencio" style="animation-delay:.75s">
+                — fila de qualificação manual · pessoa ocupada —
+              </div>
+              <div class="balao dele" style="animation-delay:1.1s">
+                Tudo bem, já me atenderam em outra construtora. Obrigado!
+                <span class="hora">22:03</span>
+              </div>
+              <div class="badge-err" style="animation-delay:1.35s">
+                ❌ Comissão perdida: ~R$ 10.000 em 48 min de fila
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6 · OS 5 GARGALOS DO CORRETOR AUTÔNOMO -->
+    <!-- ============================================================ -->
+    <section class="slide tem-dor" data-cap="Problema" data-tit="Os 5 gargalos do corretor autônomo">
+      <div class="fit">
+        <div class="olho dor">Gargalos Operacionais</div>
+        <h2>Os cinco pontos onde o lead trava antes de <b class="dor">chegar qualificado em você</b></h2>
+        <div class="grade g5" style="margin-top:22px">
+          <div class="cartao dor">
+            <span class="num">01 · Filtro</span>
+            <h3>Curiosos sem filtro</h3>
+            <p>Paulo atende manualmente quem não tem orçamento, prazo nem intenção real. Tempo desperdiçado que poderia ir para leads quentes.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">02 · Impulso</span>
+            <h3>Lead esfria rápido</h3>
+            <p>Vindo de TikTok/Instagram, o impulso é imediato. Cada minuto de espera na qualificação manual é uma chance a menos de converter.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">03 · Dependência</span>
+            <h3>Uma pessoa, um gargalo</h3>
+            <p>Se a pessoa que qualifica está ocupada, doente ou em folga — a fila trava. O lead não espera para saber disso.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">04 · Histórico</span>
+            <h3>Sem memória organizada</h3>
+            <p>Quem já foi qualificado? Qual imóvel foi apresentado? Em que etapa está cada negociação? Sem CRM, depende da memória.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">05 · Portfólio</span>
+            <h3>Captou novo, não cruza</h3>
+            <p>Ao captar um imóvel novo, provavelmente não existe sistema que verifique automaticamente se alguém da sua base tem esse perfil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 7 · CALCULADORA DO LEAD PERDIDO -->
+    <!-- ============================================================ -->
+    <section class="slide tem-dor" data-cap="Implicação" data-tit="Calculadora de comissões perdidas">
+      <div class="fit">
+        <div class="olho dor">Calculadora Financeira</div>
+        <h2>Vamos <b class="dor">colocar preço</b> nisso para o seu funil</h2>
+        <div class="calc">
+          <div class="controles">
+            <div class="controle">
+              <label>Leads recebidos por mês (WhatsApp + Instagram): <b id="v-leads">120</b></label>
+              <input type="range" id="r-leads" min="20" max="500" step="10" value="120" oninput="calcPaulo()">
+            </div>
+            <div class="controle">
+              <label>% que ficam em fila ou chegam fora de hora: <b id="v-perc">35%</b></label>
+              <input type="range" id="r-perc" min="10" max="70" step="5" value="35" oninput="calcPaulo()">
+            </div>
+            <div class="controle">
+              <label>Taxa de conversão se qualificado em até 2 min: <b id="v-taxa">12%</b></label>
+              <input type="range" id="r-taxa" min="5" max="30" step="1" value="12" oninput="calcPaulo()">
+            </div>
+            <div class="controle">
+              <label>Comissão média por imóvel vendido: <b id="v-com">R$&nbsp;10.000</b></label>
+              <input type="range" id="r-com" min="3000" max="30000" step="500" value="10000" oninput="calcPaulo()">
+            </div>
+          </div>
+          <div class="resultado">
+            <div class="rot">Comissões que escorrem pelo gargalo todo ano</div>
+            <div class="cifra dor" id="v-ano">R$&nbsp;72.072</div>
+            <div class="linha2">
+              <div>
+                <span>Por mês</span>
+                <b id="v-mes">R$&nbsp;6.006</b>
+              </div>
+              <div>
+                <span>Negócios perdidos/mês</span>
+                <b id="v-qtd">5</b>
+              </div>
+            </div>
+            <div class="aviso-espera">
+              <span>⏳ Custo de esperar 3 meses</span>
+              <b id="v-espera">R$&nbsp;18.018</b>
+            </div>
+            <div class="sub">Cada mês sem resolver o gargalo tem um preço. A coluna "custo de esperar" mostra o quanto custa a decisão de "testar mais um pouco".</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 8 · O CUSTO INVISÍVEL -->
+    <!-- ============================================================ -->
+    <section class="slide tem-dor" data-cap="Implicação" data-tit="O custo que não aparece">
+      <div class="fit">
+        <div class="olho dor">Impacto Invisível</div>
+        <h2>E tem o custo que <b class="dor">não aparece</b> no extrato</h2>
+        <div class="grade g3" style="margin-top:28px">
+          <div class="cartao dor">
+            <span class="num">01 · Desgaste</span>
+            <h3>Paulo é tudo ao mesmo tempo</h3>
+            <p>Corretor + atendente + qualificador + follow-up manual. Esse acúmulo tem um teto — e quando chega nele, o volume de leads que você consegue tocar por dia para de crescer.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">02 · Teto de Renda</span>
+            <h3>Volume limitado por pessoa</h3>
+            <p>Um corretor autônomo consegue qualificar bem 15–20 leads por dia. Com automação, esse número pode ser 5x maior — sem contratar ninguém.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">03 · Base Esquecida</span>
+            <h3>Lead morno vira lead frio</h3>
+            <p>Sem follow-up automático, o lead que não respondeu ontem não recebe mais nenhum contato. Mais de 35% desses negócios fechariam com um único lembrete bem posicionado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 9 · AS 3 PERGUNTAS -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Necessidade" data-tit="As 3 perguntas que definem o próximo nível">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Momento de Decisão</div>
+            <h2>Agora <br><b>me diz você:</b></h2>
+            <p class="lede">Três perguntas sinceras para entender se o seu funil está pronto para o próximo nível — sem contratar mais gente.</p>
+          </div>
+          <div>
+            <ul class="perguntas">
+              <li>
+                <span>01</span>
+                <p>Se todo lead recebesse as 5 perguntas de qualificação em menos de 2 minutos — inclusive no TikTok às 22h de domingo — <b>quantas visitas a mais você agendaria por semana?</b></p>
+              </li>
+              <li>
+                <span>02</span>
+                <p>Se ao captar um imóvel novo o sistema já cruzasse com os compradores qualificados na sua base, <b>quantos negócios antigos você reativaria essa semana?</b></p>
+              </li>
+              <li>
+                <span>03</span>
+                <p>Se você soubesse, toda segunda-feira, exatamente quantos leads chegaram, quantos são quentes e qual o próximo passo de cada um — <b>em quanto tempo você fecharia mais sem trabalhar mais horas?</b></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10 · VISÃO GERAL DO SISTEMA -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gain" data-cap="A Solução" data-tit="Visão geral do sistema">
+      <div class="fit">
+        <div class="olho gain">A Solução FCB</div>
+        <h2>É exatamente isso que o sistema entrega — <b class="gain">encaixado no que você já tem</b></h2>
+        <p class="lede" style="margin-bottom:20px">Não é substituição do seu bot. É o módulo que completa o funil entre a primeira mensagem e o lead quente na sua mão.</p>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div class="feat">
+            <div class="feat-icon">🎯</div>
+            <div><h4>Qualificação automática com IA (BANT conversacional)</h4><p>A IA faz as 5 perguntas-chave em linguagem natural — orçamento, região, prazo, financiamento, urgência. Só o lead quente chega até você.</p></div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon">📅</div>
+            <div><h4>Agendamento automático de visitas</h4><p>Lead classificado como quente → link de agenda enviado automaticamente → visita confirmada sem idas e vindas manuais.</p></div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon">📊</div>
+            <div><h4>Mini-CRM / painel de pipeline</h4><p>Cada lead no seu estágio, histórico de conversa, imóvel de interesse e próximo passo — organizado e acessível de qualquer lugar.</p></div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon gold">🏦</div>
+            <div><h4>Simulação de financiamento no bot <span class="novo">Novo</span></h4><p>A IA responde "sua entrada é R$X e as parcelas ficam em torno de R$Y/mês" dentro da própria conversa — lead chega muito mais preparado para fechar.</p></div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon gold">🔔</div>
+            <div><h4>Match automático + disparo para lançamentos <span class="novo">Novo</span></h4><p>Captou imóvel novo? O sistema cruza com compradores da base e dispara automaticamente para os perfis compatíveis.</p></div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon gold">📋</div>
+            <div><h4>Relatório semanal automático <span class="novo">Novo</span></h4><p>Toda segunda-feira: leads recebidos, qualificados, quentes, visitas agendadas e taxa de conversão — sem você precisar montar planilha nenhuma.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 11 · COMO A QUALIFICAÇÃO FUNCIONA NA PRÁTICA -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gain" data-cap="A Solução" data-tit="Qualificação automática na prática">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gain">Módulo 1 · Qualificação IA</div>
+            <h2>Do primeiro contato ao lead quente — <b class="gain">sem nenhuma intervenção sua</b></h2>
+            <ul class="itens">
+              <li><b>BANT conversacional:</b><span> as mesmas 5 perguntas que uma boa qualificação humana faria — em linguagem natural, não formulário robótico.</span></li>
+              <li><b>Classificação automática:</b><span> frio / morno / quente. Só o quente chega com notificação para Paulo.</span></li>
+              <li><b>Funciona 24/7:</b><span> inclusive no TikTok de domingo à noite — onde o impulso de compra é maior.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar" style="background:var(--gain)">IA</div>
+                <div><b>Assistente FCB · Qualificação</b><em>Módulo plugado no bot do Paulo</em></div>
+              </div>
+              <div class="balao dele" style="animation-delay:.1s">
+                Oi! Vi o apê de 2 quartos no seu Instagram. Me fala mais!
+                <span class="hora">22:10</span>
+              </div>
+              <div class="balao meu ia" style="animation-delay:.4s">
+                <span class="ia-tag">IA · Qualificação</span>
+                Oi! 😊 Boa escolha! Me conta — você pensa em morar nele ou é investimento?
+                <span class="hora">22:10</span>
+              </div>
+              <div class="balao dele" style="animation-delay:.7s">
+                Morar mesmo. Sou eu e minha esposa.
+                <span class="hora">22:11</span>
+              </div>
+              <div class="balao meu ia" style="animation-delay:1.0s">
+                <span class="ia-tag">IA · Qualificação</span>
+                Perfeito! Qual região você prefere — você trabalha perto daqui? E tem ideia do orçamento disponível, é financiamento ou à vista?
+                <span class="hora">22:11</span>
+              </div>
+              <div class="balao dele" style="animation-delay:1.3s">
+                Financiamento, até uns R$ 700k. Trabalho na Paulista.
+                <span class="hora">22:12</span>
+              </div>
+              <div class="badge-ok" style="animation-delay:1.6s">
+                🔥 Lead QUENTE detectado · Notificando Paulo agora
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 12 · SIMULAÇÃO DE FINANCIAMENTO NO BOT -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gold" data-cap="A Solução" data-tit="Simulação de financiamento automática">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gold">Módulo 2 · Simulador de Financiamento</div>
+            <h2>O comprador pergunta. A IA <b class="gold">simula o financiamento</b> na hora.</h2>
+            <p class="lede">Paulo já posta simulações de financiamento no Instagram. Agora imagine o comprador receber essa simulação <b>personalizada para o orçamento dele</b>, dentro da própria conversa de qualificação.</p>
+            <ul class="itens" style="margin-top:18px">
+              <li><b>Lead chega preparado:</b><span> ele já sabe a parcela antes de falar com Paulo — a conversa de fechamento começa mais avançada.</span></li>
+              <li><b>Diferencial competitivo:</b><span> concorrentes mandam o PDF de financiamento no dia seguinte. A IA responde em 30 segundos.</span></li>
+              <li><b>Simula entrada parcelada:</b><span> perfeito para os lançamentos com sinal de R$ 499 e parcelas de R$ 899 do portfólio do Paulo.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="simul">
+              <div class="s-topo">🏦 Simulação gerada pela IA · Apê Jardins · R$ 650.000</div>
+              <div class="s-linha"><span>Valor do imóvel</span><b>R$ 650.000</b></div>
+              <div class="s-linha"><span>Entrada (20% FGTS)</span><b>R$ 130.000</b></div>
+              <div class="s-linha"><span>Financiado</span><b>R$ 520.000</b></div>
+              <div class="s-linha"><span>Prazo</span><b>360 meses (30 anos)</b></div>
+              <div class="s-linha"><span>Taxa estimada (SFH)</span><b>10,5% a.a.</b></div>
+              <div class="s-resultado">
+                <span>Parcela estimada</span>
+                <b>R$ 4.890/mês</b>
+                <em>* Simulação aproximada · sujeito à análise de crédito</em>
+              </div>
+              <div class="s-badge">
+                ✅ Enviado automaticamente na conversa de qualificação
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 13 · PAINEL DE PIPELINE -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gain" data-cap="A Solução" data-tit="Painel de pipeline">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gain">Módulo 3 · Mini-CRM</div>
+            <h2>Uma tela — você sabe onde está <b class="gain">cada negociação</b></h2>
+            <ul class="itens">
+              <li><b>Etapas visuais do funil:</b><span> Novo Lead → Em Qualificação → Quente → Visita Agendada → Proposta → Fechado.</span></li>
+              <li><b>Histórico completo:</b><span> toda a conversa, imóvel de interesse, orçamento e próximo passo registrados automaticamente.</span></li>
+              <li><b>Follow-up automático:</b><span> lead morno sem resposta em 48h recebe lembrete automático — sem Paulo precisar lembrar.</span></li>
+              <li><b>Base é do Paulo:</b><span> contatos, histórico e dados ficam em um painel seguro — não soltos em celular de terceiro.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="crm-mock">
+              <div class="crm-topo"><b>Pipeline · Setembro 2026</b><span class="crm-tag visita">7 visitas esta semana</span></div>
+              <div class="pipeline">
+                <div class="pipe-col">
+                  <h5>Novos</h5>
+                  <div class="pipe-card">Marcos S.<div class="val">R$ 450k</div></div>
+                  <div class="pipe-card">Priya R.<div class="val">R$ 620k</div></div>
+                </div>
+                <div class="pipe-col">
+                  <h5>Qualif.</h5>
+                  <div class="pipe-card">Ana C.<div class="val">R$ 380k</div></div>
+                </div>
+                <div class="pipe-col" style="border:2px solid var(--dor);border-radius:10px">
+                  <h5 style="color:var(--dor)">🔥 Quentes</h5>
+                  <div class="pipe-card">Carlos M.<div class="val">R$ 700k</div></div>
+                  <div class="pipe-card">Bianca L.<div class="val">R$ 550k</div></div>
+                </div>
+                <div class="pipe-col">
+                  <h5>Visita</h5>
+                  <div class="pipe-card">Fernanda A.<div class="val">Ter 10h</div></div>
+                </div>
+                <div class="pipe-col">
+                  <h5>Proposta</h5>
+                  <div class="pipe-card">Ricardo T.<div class="val">R$ 1.2M</div></div>
+                </div>
+              </div>
+              <button class="crm-btn">Ver histórico completo · 38 leads ativos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 14 · MATCH AUTOMÁTICO + DISPARO PARA LANÇAMENTOS -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gold" data-cap="A Solução" data-tit="Match automático e disparo para lançamentos">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gold">Módulo 4 · Match &amp; Disparo</div>
+            <h2>Captou imóvel novo? O sistema já <b class="gold">avisa quem da sua base quer comprar</b></h2>
+            <p class="lede">Ao cadastrar um novo imóvel no portfólio, o sistema cruza automaticamente com compradores qualificados na base — e dispara uma mensagem personalizada para os perfis compatíveis.</p>
+            <ul class="itens" style="margin-top:16px">
+              <li><b>Reativa base existente:</b><span> leads mornos de 3 meses atrás podem ser exatamente o perfil do imóvel que você acabou de captar.</span></li>
+              <li><b>Perfeito para lançamentos:</b><span> disparo em lista qualificada para quem tem orçamento e prazo compatíveis com o produto.</span></li>
+              <li><b>Personalizado por perfil:</b><span> a mensagem menciona o bairro, orçamento e tipo de imóvel que o comprador informou na qualificação.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="match-mock">
+              <div class="match-topo">
+                <div class="match-icon">🔔</div>
+                <div><b>Match automático detectado!</b><em>Novo imóvel: Apê Pinheiros · R$ 680k</em></div>
+              </div>
+              <p style="font-size:12px;color:var(--muted);margin-bottom:10px">3 compradores qualificados na sua base têm esse perfil:</p>
+              <div class="match-item">
+                <div class="mi-avatar">CM</div>
+                <div class="mi-info"><b>Carlos Mendes</b><span>Orçamento R$ 700k · Pinheiros · Financiamento</span></div>
+                <button class="mi-btn">Disparar</button>
+              </div>
+              <div class="match-item">
+                <div class="mi-avatar">RT</div>
+                <div class="mi-info"><b>Rafaela Torres</b><span>Orçamento R$ 650k · Brooklin/Pinheiros · À vista</span></div>
+                <button class="mi-btn">Disparar</button>
+              </div>
+              <div class="match-item">
+                <div class="mi-avatar">GP</div>
+                <div class="mi-info"><b>Gustavo Pires</b><span>Orçamento R$ 720k · Região Oeste · Financiamento</span></div>
+                <button class="mi-btn">Disparar</button>
+              </div>
+              <div style="margin-top:10px;background:var(--gold-light);border-radius:10px;padding:10px;font-size:12px;color:var(--navy);text-align:center;font-weight:700">
+                🚀 Ou disparar para os 3 ao mesmo tempo — 1 clique
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 15 · RELATÓRIO SEMANAL AUTOMÁTICO -->
+    <!-- ============================================================ -->
+    <section class="slide tem-gold" data-cap="A Solução" data-tit="Relatório semanal automático">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gold">Módulo 5 · Inteligência do Funil</div>
+            <h2>Toda segunda-feira: o resumo do seu funil <b class="gold">sem montar planilha nenhuma</b></h2>
+            <p class="lede">Paulo é autônomo — não tem gestor que analisa os dados por ele. O relatório semanal automático entrega os números que importam direto no WhatsApp dele, toda segunda às 8h.</p>
+            <ul class="itens" style="margin-top:18px">
+              <li><b>Gestão sem esforço:</b><span> Paulo vira o gerente do próprio funil sem precisar montar dashboard ou abrir planilha.</span></li>
+              <li><b>Decisões com dado:</b><span> qual canal está gerando leads quentes? Qual tipo de imóvel tem mais interesse? O relatório responde.</span></li>
+              <li><b>Âncora de continuidade:</b><span> quem começa a receber esse relatório raramente quer parar — o dado vicia.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="relat">
+              <div class="relat-topo">
+                <b>📋 Relatório Semanal · Paulo Gabriel</b>
+                <span>22–28 Set 2026</span>
+              </div>
+              <div class="relat-stat">
+                <div class="relat-box">
+                  <span>Leads recebidos</span>
+                  <b>47</b>
+                  <div class="relat-bar"><div style="width:78%"></div></div>
+                </div>
+                <div class="relat-box high">
+                  <span>Leads quentes 🔥</span>
+                  <b>11</b>
+                  <div class="relat-bar"><div style="width:23%;background:linear-gradient(90deg,var(--gain),#10b981)"></div></div>
+                </div>
+                <div class="relat-box">
+                  <span>Visitas agendadas</span>
+                  <b>7</b>
+                  <div class="relat-bar"><div style="width:64%"></div></div>
+                </div>
+                <div class="relat-box warn">
+                  <span>Leads mornos</span>
+                  <b>19</b>
+                  <div class="relat-bar"><div style="width:40%;background:linear-gradient(90deg,var(--gold),var(--gold-glow))"></div></div>
+                </div>
+              </div>
+              <div class="relat-nota">
+                💡 <b>Insight da semana:</b> 6 dos 19 leads mornos têm orçamento acima de R$ 600k. Sugiro reengajamento automático amanhã com o novo imóvel de Pinheiros.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 16 · IMPLANTAÇÃO -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Implantação" data-tit="Como funciona a implantação">
+      <div class="fit">
+        <div class="olho">Implantação em 3 Semanas</div>
+        <h2>Como a gente entra sem <b>quebrar nada que você já tem</b></h2>
+        <p class="lede">Plugamos o módulo de qualificação no fluxo que já existe. Sem trocar de bot, sem migrar contatos na raça, sem aprender sistema do zero.</p>
+        <div class="passos">
+          <div class="passo">
+            <span class="q">Semana 1 · Onboarding</span>
+            <b>Mapeamento do fluxo atual</b>
+            <p>Entendemos o bot existente, o portfólio de imóveis, as regiões e o perfil dos compradores do Paulo. Configuramos a IA com a linguagem e o estilo de atendimento dele.</p>
+          </div>
+          <div class="passo">
+            <span class="q">Semana 2 · Integração</span>
+            <b>Módulo plugado e testado</b>
+            <p>Qualificação, simulador de financiamento e pipeline integrados. Paulo testa com leads reais antes de ativar para todo o fluxo. Ajustes finos de linguagem e perguntas.</p>
+          </div>
+          <div class="passo">
+            <span class="q">Semana 3 · Ao vivo</span>
+            <b>Recebendo só leads quentes</b>
+            <p>Sistema ativo para todos os canais. Match automático funcionando. Primeiro relatório semanal chega na segunda-feira da 3ª semana. Paulo foca no fechamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 17 · OBJEÇÕES -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Implantação" data-tit="Perguntas frequentes">
+      <div class="fit">
+        <div class="olho">Transparência Total</div>
+        <h2>Perguntas que surgem com frequência — <b>e as respostas honestas</b></h2>
+        <table class="comp">
+          <thead>
+            <tr>
+              <th class="neg">Objeção</th>
+              <th>Resposta direta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>"Já tenho bot, pra que trocar?"</th>
+              <td class="sim">Não é substituição — é o módulo que completa o que o bot atual não faz: qualificar, simular financiamento, registrar no pipeline e fazer match com portfólio.</td>
+            </tr>
+            <tr>
+              <th>"A IA vai perder a qualidade humana?"</th>
+              <td class="sim">A IA faz as mesmas 5 perguntas que você faria, em linguagem natural. Só o lead quente chega até você — e chega mais preparado para fechar.</td>
+            </tr>
+            <tr>
+              <th>"Vou perder controle da conversa?"</th>
+              <td class="sim">Você pode intervir a qualquer momento. O bot só age até o ponto de classificar o lead. A partir daí, a conversa é sua — com todo o histórico na tela.</td>
+            </tr>
+            <tr>
+              <th>"Meu volume não justifica."</th>
+              <td class="sim">Corretor autônomo com volume menor precisa MAIS de qualificação, não menos. Você não pode desperdiçar 40 min com um curioso quando tem leads quentes esperando. Volume de imobiliária grande absorve o desperdício — o seu não.</td>
+            </tr>
+            <tr>
+              <th>"Vou testar mais um pouco sozinho."</th>
+              <td class="sim">Cada mês sem o módulo tem um preço — vimos na calculadora. "Testar mais um pouco" significa pagar esse valor todo mês até a decisão. A pergunta real é: quanto custa esperar 3 meses?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 18 · PRÓXIMOS PASSOS -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Fechamento" data-tit="Próximos passos">
+      <div class="fit">
+        <div class="olho">O Que Acontece a Seguir</div>
+        <h2>O que acontece a partir da <b>sua decisão</b></h2>
+        <p class="lede">Três passos simples. Sem burocracia, sem processo longo, sem aprender sistema do zero.</p>
+        <div class="grade g3" style="margin-top:32px">
+          <div class="cartao gold">
+            <span class="num">Passo 01</span>
+            <h3>🤝 Você diz "vamos"</h3>
+            <p>Agendamos uma call de onboarding em até 48 horas. A pauta é simples: entender o bot atual, o portfólio e o perfil dos seus compradores.</p>
+          </div>
+          <div class="cartao gold">
+            <span class="num">Passo 02</span>
+            <h3>⚙️ A gente configura tudo</h3>
+            <p>Em 1 hora de mapeamento com você, configuramos a IA no seu estilo de atendimento. Você não precisa mexer em nada — é nossa operação.</p>
+          </div>
+          <div class="cartao gold">
+            <span class="num">Passo 03</span>
+            <h3>🔥 Você recebe só leads quentes</h3>
+            <p>Em 3 semanas, o sistema está ao vivo. Todo lead que chega é qualificado, simulado e classificado antes de você ver. Você foca no fechamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 19 · CTA FINAL -->
+    <!-- ============================================================ -->
+    <section class="slide" data-cap="Fechamento" data-tit="Próximo nível">
+      <div class="fit" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh">
+        <div class="olho" style="justify-content:center">FCB Automações · Para Paulo Gabriel</div>
+        <h1 style="text-align:center;max-width:20ch;margin:0 auto">Paulo, você já tem a entrada do funil.<br><b class="gold">Vamos completar o resto.</b></h1>
+        <p class="lede" style="text-align:center;margin:20px auto 0;max-width:52ch">Você captura leads com conteúdo de qualidade no Instagram e TikTok. O que falta é o módulo que filtra os curiosos, qualifica os compradores e entrega só os quentes para você fechar. É exatamente isso que a FCB entrega.</p>
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;justify-content:center">
+          <a class="cta-link" href="#" id="cta-wpp">
+            💬 Falar com a FCB
+          </a>
+        </div>
+        <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:600px">
+          <div style="text-align:center">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px">Implantação</div>
+            <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--navy)">3 semanas</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px">Intervenção sua</div>
+            <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--navy)">1 hora</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px">Bot atual</div>
+            <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--gain)">mantido ✓</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /palco -->
+</div><!-- /deck -->
+
+<!-- MENU SUMÁRIO -->
+<div class="menu" id="menu" role="dialog" aria-label="Sumário de slides">
+  <div class="olho">Sumário da Apresentação</div>
+  <h2>Navegar pelos <b>slides</b></h2>
+  <div id="menu-lista"></div>
+  <button onclick="toggleMenu()" style="margin-top:28px;font-family:var(--font-head);font-weight:700;font-size:14px;padding:12px 24px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer">← Voltar à apresentação</button>
+</div>
+
+<!-- HUD RODAPÉ -->
+<div class="hud" id="hud">
+  <div class="hud-nav">
+    <button id="btn-menu" type="button" onclick="toggleMenu()" title="Sumário" aria-label="Abrir sumário">☰</button>
+    <button id="ant" type="button" onclick="ir(-1)" title="Slide anterior" aria-label="Slide anterior">← Ant.</button>
+    <span class="pos-badge" id="pos-badge">1 / 19</span>
+    <button id="prox" type="button" class="btn-primary" onclick="ir(1)" title="Próximo slide" aria-label="Próximo slide">Próx. →</button>
+  </div>
+</div>
+
+<script>
+// ─── Estado ───────────────────────────────────────────────────────────
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dotsEl = document.getElementById('dots');
+const bar    = document.getElementById('progress-bar');
+const badge  = document.getElementById('pos-badge');
+let cur = 0;
+
+// ─── Dots ─────────────────────────────────────────────────────────────
+slides.forEach((s,i)=>{
+  const d = document.createElement('button');
+  d.className = 'dot' + (i===0?' on':'');
+  d.setAttribute('aria-label','Slide '+(i+1)+': '+s.dataset.tit);
+  d.title = s.dataset.tit;
+  d.onclick = ()=>ir(i-cur);
+  dotsEl.appendChild(d);
+});
+
+// ─── Navegação Fluida ────────────────────────────────────────────────
+let lastNavTime = 0;
+
+function ir(delta, customDir){
+  const now = Date.now();
+  if(now - lastNavTime < 140) return;
+  lastNavTime = now;
+
+  const nx = Math.max(0, Math.min(slides.length-1, cur+delta));
+  if(nx === cur) return;
+
+  const dir = customDir !== undefined ? customDir : (delta > 0 ? 1 : -1);
+
+  // Limpa slide anterior
+  slides[cur].classList.remove('ativo', 'entra-dir', 'entra-esq');
+  slides[cur].style.transform = '';
+  slides[cur].style.transition = '';
+  if(dotsEl && dotsEl.children[cur]) dotsEl.children[cur].classList.remove('on');
+
+  cur = nx;
+
+  // Ativa novo slide com animação direcional
+  slides[cur].classList.remove('entra-dir', 'entra-esq');
+  slides[cur].classList.add('ativo');
+  if(dir > 0){
+    slides[cur].classList.add('entra-dir');
+  } else {
+    slides[cur].classList.add('entra-esq');
+  }
+  slides[cur].scrollTop = 0; // Volta ao topo do slide no celular
+
+  if(dotsEl && dotsEl.children[cur]){
+    dotsEl.children[cur].classList.add('on');
+    dotsEl.children[cur].scrollIntoView({block:'nearest'});
+  }
+  bar.style.width = ((cur+1)/slides.length*100).toFixed(2)+'%';
+  badge.textContent = (cur+1)+' / '+slides.length;
+}
+
+// ─── Toque Rápido HUD (Evita atraso e perda de clique no iPhone) ──────
+function bindFastTap(id, delta){
+  const btn = document.getElementById(id);
+  if(!btn) return;
+  let touchHandled = false;
+  btn.addEventListener('touchstart', () => { touchHandled = false; }, { passive: true });
+  btn.addEventListener('touchend', e => {
+    e.preventDefault();
+    touchHandled = true;
+    ir(delta);
+  });
+  btn.addEventListener('click', e => {
+    if(touchHandled){
+      touchHandled = false;
+      return;
+    }
+    ir(delta);
+  });
+}
+bindFastTap('prox', 1);
+bindFastTap('ant', -1);
+
+// Teclado
+document.addEventListener('keydown', e => {
+  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' ') ir(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp') ir(-1);
+  if(e.key==='Escape') { closeMenu(); }
+});
+
+// ─── Gesto de Puxar o Dedo na Tela (Swipe Fluido e Natural) ───────────
+let touchStartX = 0;
+let touchStartY = 0;
+let touchStartTime = 0;
+let isHorizontalSwipe = false;
+let isSwipeDecided = false;
+
+const palcoEl = document.getElementById('palco') || document.body;
+
+palcoEl.addEventListener('touchstart', e => {
+  if (e.touches.length !== 1) return;
+  const target = e.target;
+  // Não interceptar sliders ou botões internos
+  if (target.closest('input[type="range"]') || target.closest('button') || target.closest('a') || target.closest('#hud') || target.closest('#menu')) {
+    isSwipeDecided = true;
+    isHorizontalSwipe = false;
+    return;
+  }
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  touchStartTime = Date.now();
+  isHorizontalSwipe = false;
+  isSwipeDecided = false;
+}, { passive: true });
+
+palcoEl.addEventListener('touchmove', e => {
+  if (e.touches.length !== 1 || (isSwipeDecided && !isHorizontalSwipe)) return;
+  const cx = e.touches[0].clientX;
+  const cy = e.touches[0].clientY;
+  const dx = cx - touchStartX;
+  const dy = cy - touchStartY;
+
+  if (!isSwipeDecided) {
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
+      isSwipeDecided = true;
+      if (Math.abs(dx) > Math.abs(dy) * 1.15) {
+        isHorizontalSwipe = true;
+      } else {
+        isHorizontalSwipe = false;
+        return;
+      }
+    } else {
+      return;
+    }
+  }
+
+  if (isHorizontalSwipe) {
+    // Efeito elástico enquanto puxa o dedo
+    const activeSlide = slides[cur];
+    if (activeSlide) {
+      const resist = (cur === 0 && dx > 0) || (cur === slides.length - 1 && dx < 0) ? 0.2 : 0.45;
+      activeSlide.style.transition = 'none';
+      activeSlide.style.transform = `translate3d(${dx * resist}px, 0, 0)`;
+    }
+  }
+}, { passive: true });
+
+palcoEl.addEventListener('touchend', e => {
+  const activeSlide = slides[cur];
+  if (isHorizontalSwipe && activeSlide) {
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - touchStartX;
+    const dt = Date.now() - touchStartTime;
+    const velocity = Math.abs(dx) / (dt || 1);
+
+    activeSlide.style.transition = 'transform .22s cubic-bezier(0.16, 1, 0.3, 1)';
+    activeSlide.style.transform = '';
+
+    // Dispara mudança se puxou mais de 35px ou fez flick rápido (> 0.25px/ms)
+    if (Math.abs(dx) > 35 || (velocity > 0.25 && Math.abs(dx) > 18)) {
+      if (dx < 0) {
+        ir(1, 1);   // Puxou para a esquerda -> Próximo slide
+      } else {
+        ir(-1, -1); // Puxou para a direita -> Slide anterior
+      }
+    }
+  } else if (activeSlide) {
+    activeSlide.style.transform = '';
+  }
+  isHorizontalSwipe = false;
+  isSwipeDecided = false;
+}, { passive: true });
+
+palcoEl.addEventListener('touchcancel', () => {
+  const activeSlide = slides[cur];
+  if (activeSlide) {
+    activeSlide.style.transition = 'transform .2s ease';
+    activeSlide.style.transform = '';
+  }
+  isHorizontalSwipe = false;
+  isSwipeDecided = false;
+});
+
+// ─── Chips ────────────────────────────────────────────────────────────
+function toggleChip(el){
+  const p = el.getAttribute('aria-pressed')==='true';
+  el.setAttribute('aria-pressed', String(!p));
+}
+
+// ─── Calculadora de Leads ────────────────────────────────────────────
+function fmt(n){ return 'R$\u00a0'+Math.round(n).toLocaleString('pt-BR'); }
+function calcPaulo(){
+  const leads = +document.getElementById('r-leads').value;
+  const perc  = +document.getElementById('r-perc').value / 100;
+  const taxa  = +document.getElementById('r-taxa').value / 100;
+  const com   = +document.getElementById('r-com').value;
+  document.getElementById('v-leads').textContent = leads;
+  document.getElementById('v-perc').textContent  = Math.round(perc*100)+'%';
+  document.getElementById('v-taxa').textContent  = Math.round(taxa*100)+'%';
+  document.getElementById('v-com').innerHTML     = 'R$\u00a0'+com.toLocaleString('pt-BR');
+  const perMes   = leads * perc * taxa * com;
+  const perAno   = perMes * 12;
+  const perQtd   = Math.round(leads * perc * taxa);
+  const espera3m = perMes * 3;
+  document.getElementById('v-mes').textContent    = fmt(perMes);
+  document.getElementById('v-ano').innerHTML      = fmt(perAno);
+  document.getElementById('v-qtd').textContent    = perQtd;
+  document.getElementById('v-espera').textContent = fmt(espera3m);
+}
+calcPaulo();
+
+
+// ─── Menu Sumário ────────────────────────────────────────────────────
+function toggleMenu(){ document.getElementById('menu').classList.toggle('on'); buildMenu(); }
+function closeMenu() { document.getElementById('menu').classList.remove('on'); }
+function buildMenu(){
+  const el = document.getElementById('menu-lista');
+  if(el.innerHTML) return;
+  const caps = {};
+  slides.forEach((s,i)=>{
+    const c = s.dataset.cap||'Geral';
+    if(!caps[c]) caps[c]=[];
+    caps[c].push({i,tit:s.dataset.tit});
+  });
+  let html='';
+  for(const [cap,items] of Object.entries(caps)){
+    html+=`<div class="cap">${cap}</div><ol>`;
+    items.forEach(({i,tit})=>{
+      html+=`<li><button onclick="ir(${i}-cur);closeMenu()"><i>${String(i+1).padStart(2,'0')}</i>${tit}</button></li>`;
+    });
+    html+='</ol>';
+  }
+  el.innerHTML=html;
+}
+</script>
+</body>
+</html>
