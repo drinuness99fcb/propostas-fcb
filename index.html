@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FCB Automações — Apresentação Comercial para Pousadas &amp; Hotéis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#080e14;
+  --navy:#0e1722;
+  --slate:#1e293b;
+  --ink:#1e293b;
+  --teal:#0d9488;
+  --teal-glow:#14b8a6;
+  --teal-light:#f0fdfa;
+  --gold:#d97706;
+  --gold-glow:#f59e0b;
+  --gold-light:#fffbeb;
+  --ice:#f8fafc;
+  --line:#e2e8f0;
+  --white:#ffffff;
+  --muted:#64748b;
+  --dor:#e11d48;
+  --dor-light:#fff1f2;
+  --shadow:0 24px 60px rgba(14,23,34,0.11);
+  --shadow-lg:0 30px 80px rgba(13,148,136,0.18);
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --font-head:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--obsidian);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow:hidden}
+.deck{position:relative;height:100vh;height:100dvh;display:flex;background:var(--white)}
+
+/* LOGO TOPO DIREITO */
+.logo-fcb{position:fixed;top:20px;right:30px;z-index:30;display:flex;align-items:center;gap:10px;text-decoration:none;pointer-events:none}
+.logo-badge{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--teal),#044e47);color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:16px;box-shadow:0 6px 16px rgba(13,148,136,.35)}
+.logo-text{display:flex;flex-direction:column}
+.logo-title{font-family:var(--font-head);font-weight:800;font-size:14px;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:8px;font-weight:700;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
+
+/* TRILHO LATERAL */
+.rail{width:76px;flex:0 0 76px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:22px 0;background:var(--ice);z-index:22}
+.marca-rail{font-family:var(--font-head);font-weight:800;font-size:12px;line-height:1.1;text-align:center;letter-spacing:.02em;color:var(--navy);margin-bottom:18px}
+.marca-rail span{display:block;font-weight:700;font-size:7px;letter-spacing:.22em;color:var(--teal);margin-top:3px}
+.dots{display:flex;flex-direction:column;gap:8px;align-items:center;flex:1;overflow-y:auto;padding:4px 0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer;transition:.22s}
+.dot:hover{background:var(--teal-glow);transform:scale(1.2)}
+.dot.on{background:var(--teal);box-shadow:0 0 0 4px rgba(13,148,136,.22);height:14px;border-radius:99px}
+
+/* PALCO PRINCIPAL */
+.palco{flex:1;position:relative;overflow:hidden;background:var(--white)}
+.slide{position:absolute;inset:0;padding:68px 56px 78px;display:none;flex-direction:column;justify-content:center;overflow-y:auto;background:var(--white)}
+.slide.ativo{display:flex;animation:entra .4s cubic-bezier(0.16,1,0.3,1)}
+@keyframes entra{from{opacity:0;transform:translateX(2.5%)}to{opacity:1;transform:none}}
+
+/* TIPOGRAFIA & CABEÇALHOS */
+.olho{font-family:var(--font-head);font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--teal);font-size:clamp(11px,.9vw,14px);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.olho.dor{color:var(--dor)}
+.olho.gold{color:var(--gold)}
+.olho::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+
+h1{font-family:var(--font-head);font-size:clamp(36px,4.6vw,74px);line-height:.98;letter-spacing:-.045em;color:var(--navy);font-weight:600;max-width:18ch}
+h2{font-family:var(--font-head);font-size:clamp(26px,3.2vw,50px);line-height:1.03;letter-spacing:-.035em;color:var(--navy);font-weight:600;max-width:22ch}
+h1 b,h2 b{font-weight:800;color:var(--teal)}
+h1 b.dor,h2 b.dor{color:var(--dor)}
+h1 b.gold,h2 b.gold{color:var(--gold)}
+.slide h1::after,.slide h2::after{content:"";display:block;width:76px;height:4.5px;border-radius:9px;background:linear-gradient(90deg,var(--teal),var(--teal-glow));margin-top:18px}
+.slide.tem-dor h2::after{background:linear-gradient(90deg,var(--dor),#f43f5e)}
+.slide.tem-gold h2::after{background:linear-gradient(90deg,var(--gold),var(--gold-glow))}
+
+h3{font-family:var(--font-head);font-size:16px;line-height:1.2;color:var(--navy);font-weight:700;margin-bottom:6px}
+.lede{font-size:clamp(14px,1.15vw,18px);line-height:1.48;color:#334155;max-width:62ch;margin-top:16px}
+.lede b{font-weight:700;color:var(--navy)}
+
+.duas{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,3.4vw,56px);align-items:center}
+.duas.print{grid-template-columns:.75fr 1.25fr}
+
+/* CHAT INTERATIVO SIMULADO (MOCKUP WHATSAPP) */
+.conversa{background:var(--ice);border:1px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:11px;max-width:440px;width:100%;box-shadow:var(--shadow)}
+.conversa .topo{display:flex;align-items:center;gap:11px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#065f46);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}
+.topo b{font-size:13.5px;color:var(--navy);display:block}
+.topo em{font-family:var(--mono);font-size:9.5px;color:var(--muted);font-style:normal;display:block}
+.balao{max-width:88%;padding:10px 14px;border-radius:15px;font-size:13px;line-height:1.45;opacity:0;transform:translateY(8px);animation:sobe .45s forwards}
+@keyframes sobe{to{opacity:1;transform:none}}
+.balao.dele{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start;color:var(--ink)}
+.balao.meu{background:var(--teal);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.balao.meu.ia{background:linear-gradient(135deg,#0d9488,#0f766e);border:1px solid rgba(255,255,255,.15)}
+.balao.meu.ia .ia-tag{display:inline-block;font-family:var(--mono);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:2px 6px;border-radius:99px;margin-bottom:4px}
+.hora{font-family:var(--mono);font-size:9px;opacity:.72;display:block;margin-top:4px}
+.silencio{align-self:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dor);border-top:1px dashed rgba(225,29,72,.45);border-bottom:1px dashed rgba(225,29,72,.45);padding:7px 0;width:100%;text-align:center;opacity:0;animation:sobe .5s forwards}
+
+/* CARTOES EM GRADE */
+.grade{display:grid;gap:14px;margin-top:24px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.cartao{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.2s}
+.cartao:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(13,148,136,.08);transform:translateY(-2px)}
+.cartao p{font-size:13px;line-height:1.48;color:var(--muted)}
+.cartao .num{font-family:var(--mono);font-weight:800;font-size:10px;color:var(--teal);letter-spacing:.18em;display:block;margin-bottom:8px;text-transform:uppercase}
+.cartao.dor{border-color:rgba(225,29,72,.25);background:var(--dor-light)}
+.cartao.dor .num{color:var(--dor)}
+.cartao.bom{background:var(--teal-light);border-color:rgba(13,148,136,.3)}
+.cartao.bom .num{color:var(--teal)}
+.cartao.gold{background:var(--gold-light);border-color:rgba(217,119,6,.28)}
+.cartao.gold .num{color:var(--gold)}
+
+/* CHIPS E CAMPOS INTERATIVOS */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;max-width:840px}
+.chip{font-family:inherit;font-size:13.5px;padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px}
+.chip:hover{border-color:var(--teal);color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(13,148,136,.25)}
+.chip i{font-style:normal;font-size:14px}
+
+/* CALCULADORA DO CUSTO DO SILENCIO */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:24px}
+.controles{display:flex;flex-direction:column;gap:18px}
+.controle label{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.controle label b{font-family:var(--mono);font-size:15px;color:var(--navy);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--teal);height:20px;cursor:pointer}
+.resultado{background:linear-gradient(145deg,var(--navy),#0a131b);border-radius:26px;padding:32px 28px;color:#fff;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08)}
+.resultado .rot{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-glow)}
+.cifra{font-family:var(--font-head);font-size:clamp(36px,4.5vw,58px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;margin:8px 0 4px}
+.cifra.dor{color:#fda4af}
+.linha2{display:flex;gap:28px;margin-top:18px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+.linha2 span{font-family:var(--mono);font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#94a3b8;display:block}
+.linha2 b{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--teal-glow)}
+.resultado .sub{font-size:12px;color:#cbd5e1;line-height:1.45;margin-top:14px}
+
+/* PERGUNTAS DE IMPACTO */
+.perguntas{list-style:none;margin-top:24px;max-width:860px;border-top:1px solid var(--line)}
+.perguntas li{border-bottom:1px solid var(--line);padding:18px 2px;display:flex;gap:20px;align-items:baseline}
+.perguntas li span{font-family:var(--mono);font-weight:800;font-size:13px;color:var(--teal);flex:0 0 28px}
+.perguntas li p{font-family:var(--font-head);font-size:clamp(16px,1.55vw,23px);letter-spacing:-.025em;line-height:1.25;color:var(--navy)}
+
+/* BLOCOS E LISTAS */
+.tab{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.bloco{background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:18px}
+.bloco h4{font-family:var(--font-head);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--teal);margin-bottom:10px;text-transform:uppercase}
+.bloco ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.bloco li{font-size:12.5px;color:var(--ink);display:flex;align-items:flex-start;gap:8px;line-height:1.35}
+.bloco li i{width:6px;height:6px;border-radius:50%;background:var(--teal);flex:0 0 6px;margin-top:6px}
+
+.itens{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:11px}
+.itens li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.45}
+.itens li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--teal),var(--teal-glow));margin-top:6px}
+.itens li b{font-weight:700;color:var(--navy)}
+.itens li span{color:var(--muted)}
+
+/* MOCKUP VISUAL DE SISTEMA HOTELARIA */
+.pms-mock{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);max-width:540px;width:100%}
+.pms-topo{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.pms-topo b{font-size:13.5px;color:var(--navy);font-weight:800}
+.pms-tag{font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:99px;font-weight:700;text-transform:uppercase}
+.pms-tag.reserva{background:#dcfce7;color:#15803d}
+.pms-tag.sinal{background:#fef3c7;color:#b45309}
+.pms-tag.checkin{background:#e0f2fe;color:#0369a1}
+.pms-linha{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.pms-box{background:var(--ice);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.pms-box span{display:block;font-family:var(--mono);font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.pms-box b{font-size:13px;color:var(--navy);font-weight:700}
+.pms-btn{background:var(--teal);color:#fff;border:0;border-radius:10px;padding:11px;font-family:var(--font-head);font-weight:700;font-size:12.5px;text-align:center;display:block;width:100%;cursor:pointer;margin-top:14px;box-shadow:0 4px 14px rgba(13,148,136,.3)}
+
+/* MOCKUP SMARTPHONE CATÁLOGO DE ACOMODAÇÕES */
+.fones{display:flex;gap:22px;margin-top:20px;flex-wrap:wrap;justify-content:center}
+.fone-wrap{display:flex;flex-direction:column}
+.fone{width:215px;border:7px solid var(--navy);border-radius:28px;background:#fff;overflow:hidden;box-shadow:var(--shadow)}
+.fone .barra{background:var(--navy);color:#fff;font-family:var(--mono);font-size:8px;padding:6px 10px;display:flex;justify-content:space-between}
+.fone .corpo{padding:10px}
+.fone .banner-pousada{height:54px;border-radius:10px;background:linear-gradient(135deg,var(--teal),#044e47);margin-bottom:9px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.fone .banner-pousada b{font-size:10px;font-weight:800}
+.fone .banner-pousada span{font-size:7.5px;opacity:.85}
+.fone .quarto{border:1px solid var(--line);border-radius:10px;padding:8px;margin-bottom:8px;background:var(--ice)}
+.fone .quarto .foto-ph{height:56px;border-radius:7px;background:linear-gradient(120deg,#cbd5e1,#94a3b8);margin-bottom:6px;display:grid;place-items:center;color:#fff;font-size:8px;font-weight:700}
+.fone .quarto b{display:block;font-size:9px;color:var(--navy);font-weight:800}
+.fone .quarto .desc{font-size:7.5px;color:var(--muted);line-height:1.3;margin:2px 0 4px}
+.fone .quarto .preco{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--teal)}
+.fone .quarto .btn-reserva{background:var(--teal);color:#fff;text-align:center;border-radius:6px;padding:5px;font-size:8px;font-weight:800;margin-top:5px;display:block}
+
+/* COMPARATIVO E TABELAS */
+.comp{width:100%;border-collapse:collapse;margin-top:22px;font-size:13.5px}
+.comp th,.comp td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.comp thead th{font-family:var(--font-head);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);border-bottom:2px solid var(--teal)}
+.comp thead th.neg{color:var(--muted);border-bottom-color:var(--line)}
+.comp tbody th{font-weight:700;color:var(--navy);width:28%}
+.comp td.sim{color:var(--navy);background:var(--teal-light);font-weight:600}
+.comp td.nao{color:var(--muted)}
+
+/* PASSOS DA IMPLANTAÇÃO */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-top:4px solid;border-image:linear-gradient(90deg,var(--teal),var(--teal-glow)) 1}
+.passo{padding:18px 20px 0 0;border-right:1px solid var(--line)}
+.passo:last-child{border-right:0}
+.passo .q{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.18em;color:var(--teal);display:block;margin-bottom:8px;text-transform:uppercase}
+.passo b{display:block;font-family:var(--font-head);font-size:15px;color:var(--navy);margin-bottom:6px}
+.passo p{font-size:13px;color:var(--muted);line-height:1.45}
+
+/* NOTAS DO CONSULTOR */
+.nota{display:none}
+.deck.notas .slide.ativo .nota{display:block;position:fixed;left:76px;right:0;bottom:50px;background:var(--navy);border-top:4px solid var(--teal-glow);padding:16px 28px 18px;max-height:36vh;overflow-y:auto;z-index:25;color:#fff}
+.nota b{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-glow);display:block;margin-bottom:8px}
+.nota li{list-style:none;font-size:13px;line-height:1.5;padding-left:16px;position:relative;color:#e2e8f0}
+.nota li::before{content:"—";position:absolute;left:0;color:var(--teal-glow)}
+
+/* PROGRESS BAR TOPO */
+.progress-bar-wrap{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(0,0,0,.08);z-index:90}
+.progress-bar{height:100%;width:2.27%;background:linear-gradient(90deg,var(--teal),var(--teal-glow));transition:width .25s ease}
+
+/* HUD RODAPE */
+.hud{position:fixed;left:76px;right:0;bottom:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-top:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(8px);font-size:11.5px;color:#64748b;font-weight:700;z-index:20}
+.hud-nav{display:flex;align-items:center;gap:8px}
+.hud button{font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:7px 15px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center}
+.hud button:hover{border-color:var(--teal);color:var(--teal)}
+.hud button.btn-primary{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 3px 10px rgba(13,148,136,.25)}
+.hud button.btn-primary:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.pos-badge{font-family:var(--mono);font-size:11.5px;font-weight:800;color:var(--teal);background:var(--teal-light);padding:5px 11px;border-radius:99px;border:1px solid rgba(13,148,136,.22);white-space:nowrap}
+.hud .dicas span{margin-left:12px}
+
+/* MENU SUMARIO */
+.menu{position:fixed;inset:0;background:var(--white);z-index:50;display:none;padding:44px 56px;overflow-y:auto}
+.menu.on{display:block}
+.menu h2{margin-bottom:6px}
+.menu .cap{font-family:var(--mono);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin:24px 0 8px}
+.menu ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.menu li button{width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--navy);font-family:inherit;font-size:13px;padding:9px 4px;cursor:pointer;display:flex;gap:11px}
+.menu li button:hover{color:var(--teal)}
+.menu li button i{font-family:var(--mono);font-size:10px;color:var(--muted);font-style:normal;flex:0 0 22px}
+
+.cta-link{display:inline-flex;align-items:center;margin-top:24px;font-family:var(--font-head);font-weight:800;font-size:15px;padding:14px 28px;border-radius:99px;background:var(--teal);color:#fff;text-decoration:none;transition:.2s;box-shadow:0 10px 25px rgba(13,148,136,.3)}
+.cta-link:hover{background:var(--navy);transform:translateY(-2px)}
+
+.fit{width:100%;transform-origin:center center}
+
+/* ZOOM */
+.zoom{position:fixed;inset:0;background:rgba(8,14,20,.95);z-index:60;display:none;align-items:center;justify-content:center;padding:26px;cursor:zoom-out}
+.zoom.on{display:flex}
+.zoom img{max-width:100%;max-height:100%;border-radius:14px}
+
+/* RESPONSIVIDADE COMPLETA PARA TABLETS E CELULARES */
+@media(max-width:960px){
+  body{overflow:hidden;height:100dvh}
+  .deck{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+  .rail{display:none !important}
+  .palco{flex:1;height:calc(100dvh - 54px);overflow:hidden;position:relative}
+  .slide{position:absolute;inset:0;height:100%;max-height:100%;padding:58px 16px 20px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;display:none;flex-direction:column;justify-content:flex-start}
+  .slide.ativo{display:flex}
+  .fit{width:100%;height:auto;transform:none !important;padding-bottom:28px}
+
+  /* TIPOGRAFIA MOBILE */
+  h1{font-size:clamp(23px,6.2vw,34px);line-height:1.1;letter-spacing:-.03em;max-width:100%}
+  h2{font-size:clamp(20px,5.2vw,28px);line-height:1.15;letter-spacing:-.025em;max-width:100%}
+  h3{font-size:15px}
+  .lede{font-size:13.5px;line-height:1.46;margin-top:10px;max-width:100%}
+  .olho{font-size:10.5px;letter-spacing:.14em;margin-bottom:8px}
+  .slide h1::after,.slide h2::after{width:46px;height:3.5px;margin-top:12px}
+
+  /* LAYOUTS MOBILE EM 1 COLUNA */
+  .duas,.duas.print,.calc{grid-template-columns:1fr;gap:18px}
+  .g4,.g3,.g2,.tab{grid-template-columns:1fr;gap:10px}
+  .cartao{padding:14px 16px;border-radius:14px}
+  .cartao p{font-size:12.5px;line-height:1.45}
+
+  /* CONVERSA / CHAT MOBILE */
+  .conversa{max-width:100%;padding:14px;border-radius:18px;gap:9px}
+  .balao{font-size:12.5px;padding:8px 12px;max-width:92%}
+  .topo b{font-size:12.5px}
+  .avatar{width:30px;height:30px;font-size:11px}
+
+  /* CHIPS SELEÇÃO MOBILE */
+  .chips{gap:7px;margin-top:14px}
+  .chip{font-size:12px;padding:8px 13px}
+
+  /* CALCULADORA MOBILE */
+  .calc{gap:16px}
+  .controles{gap:12px}
+  .controle label{font-size:12px}
+  .controle label b{font-size:13.5px}
+  .resultado{padding:18px 16px;border-radius:18px}
+  .cifra{font-size:clamp(26px,7.5vw,36px)}
+  .linha2{gap:14px;flex-wrap:wrap}
+  .linha2 b{font-size:18px}
+
+  /* PMS MOCK & PASSOS MOBILE */
+  .pms-mock{padding:14px;border-radius:16px;max-width:100%}
+  .pms-linha{grid-template-columns:1fr;gap:8px}
+  .passos{grid-template-columns:1fr;gap:14px;border-top:none;margin-top:18px}
+  .passo{border-right:none;border-left:3px solid var(--teal);padding:0 0 0 14px}
+
+  /* SMARTPHONE MOCKUP MOBILE */
+  .fones{gap:12px}
+  .fone{width:min(230px,78vw)}
+
+  /* TABELAS MOBILE */
+  .comp{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:12px;margin-top:16px}
+  .comp th,.comp td{padding:8px 10px;white-space:normal}
+
+  /* PERGUNTAS MOBILE */
+  .perguntas li{padding:14px 0;gap:12px}
+  .perguntas li span{font-size:11.5px;flex:0 0 22px}
+  .perguntas li p{font-size:15px;line-height:1.3}
+
+  /* LOGO MOBILE COMPACTO */
+  .logo-fcb{top:10px;right:14px;gap:7px}
+  .logo-badge{width:28px;height:28px;font-size:11px;border-radius:7px}
+  .logo-title{font-size:11px}
+  .logo-sub{font-size:6.5px;letter-spacing:.1em}
+
+  /* NOTAS DO CONSULTOR MOBILE */
+  .deck.notas .slide.ativo .nota{left:0;right:0;bottom:54px;max-height:48vh;padding:14px 18px 16px;border-top:3px solid var(--teal-glow)}
+
+  /* MENU SUMARIO MOBILE */
+  .menu{padding:20px 16px;padding-bottom:80px}
+  .menu h2{font-size:19px}
+  .menu ol{grid-template-columns:1fr;gap:4px}
+  .menu li button{padding:10px 4px;font-size:13px}
+
+  /* HUD MOBILE ERGONÔMICO (POLEGAR) */
+  .hud{left:0;right:0;bottom:0;height:54px;padding:6px 12px;padding-bottom:max(6px,env(safe-area-inset-bottom));flex-direction:row;justify-content:space-between;align-items:center;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.06);z-index:40}
+  .hud-nav{display:flex;align-items:center;gap:6px;width:100%;justify-content:space-between}
+  .hud button{padding:8px 12px;font-size:12px;font-weight:700;border-radius:99px}
+  .desktop-only{display:none !important}
+  #btn-menu,#btn-notas{padding:8px 10px;font-size:13px}
+  #ant{background:var(--ice);border-color:var(--line);color:var(--navy)}
+  #prox{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 3px 10px rgba(13,148,136,.28)}
+  .pos-badge{font-size:11px;padding:5px 9px}
+}
+</style>
+<body>
+
+<!-- BARRA DE PROGRESSO NO TOPO -->
+<div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+<div class="deck" id="deck">
+
+  <!-- LOGO TOPO -->
+  <a class="logo-fcb" href="#">
+    <div class="logo-badge">FCB</div>
+    <div class="logo-text">
+      <div class="logo-title">FCB Automações</div>
+      <div class="logo-sub">Hospitalidade &amp; IA</div>
+    </div>
+  </a>
+
+  <!-- TRILHO LATERAL -->
+  <nav class="rail" aria-label="Navegação dos slides">
+    <div class="marca-rail">FCB<span>POUSADAS</span></div>
+    <div class="dots" id="dots"></div>
+  </nav>
+
+  <!-- PALCO PRINCIPAL DE SLIDES -->
+  <main class="palco" id="palco">
+
+    <!-- SLIDE 1: CAPA -->
+    <section class="slide ativo" data-cap="Abertura" data-tit="Capa">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Apresentação Executiva</div>
+            <h1>Toda reserva perdida começa com uma <b>mensagem sem resposta</b></h1>
+            <p class="lede">Nos próximos minutos não vamos falar de software complexo. Vamos olhar para as cotações que chegam para a sua pousada todo dia — e o quanto de diária está ficando na mesa.</p>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar">HP</div>
+                <div><b>Hóspede Potencial</b><em>Via WhatsApp · Sexta-feira</em></div>
+              </div>
+              <div class="balao dele" style="animation-delay:.15s">
+                Boa noite! Tem chalé disponível para casal de 14 a 17/nov (feriado)? Aceita pet pequeno? Qual o valor com café?
+                <span class="hora">22:14</span>
+              </div>
+              <div class="silencio" style="animation-delay:.45s">
+                — 2 horas e 40 minutos em silêncio —
+              </div>
+              <div class="balao dele" style="animation-delay:.75s">
+                Consegui fechar na pousada vizinha que me mandou fotos e chave Pix na hora. Obrigado!
+                <span class="hora">00:54</span>
+              </div>
+              <div class="balao meu" style="animation-delay:1.05s">
+                Bom dia! Desculpe a demora, a recepção estava fechada. Ainda temos disponibilidade...
+                <span class="hora">08:30 (Sábado)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Pergunte logo no início: “Quantas mensagens chegam no WhatsApp da pousada depois das 20h ou no fim de semana? Quem responde?”</li>
+        <li>O dono da pousada sabe que o viajante pesquisa na cama antes de dormir. Se ninguém responde, ele reserva na pousada ao lado.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: QUEM É A FCB -->
+    <section class="slide" data-cap="Abertura" data-tit="Quem é a FCB Automações">
+      <div class="fit">
+        <div class="olho">Especialistas em Hospitalidade</div>
+        <h2>Quem é a <b>FCB Automações</b></h2>
+        <p class="lede">Plataforma de inteligência artificial e atendimento omnichannel especializada em pousadas, chalés e hotéis boutique. Centralizamos todos os canais de conversa em um lugar só, com um <b>Concierge Virtual 24/7</b> atendendo na hora e integrado à sua rotina de reservas diretas.</p>
+        <div class="grade g4">
+          <div class="cartao bom">
+            <span class="num">01 · 24 Horas</span>
+            <h3>Atendimento 24/7</h3>
+            <p>O hóspede pesquisa diárias à noite e fins de semana. A resposta chega em menos de 40 segundos, com fotos e valores.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">02 · Mais Margem</span>
+            <h3>Venda Direta sem OTA</h3>
+            <p>Economize os 18% a 22% de comissão cobrados pela Booking.com e Airbnb convertendo o lead direto no WhatsApp.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">03 · Recepção Livre</span>
+            <h3>Recepção Desafogada</h3>
+            <p>A equipe no balcão cuida do hóspede presencial com carinho, enquanto a IA responde dúvidas repetitivas de cotação.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">04 · Base Segura</span>
+            <h3>A Base é da Pousada</h3>
+            <p>Contatos, orçamentos e históricos centralizados em um painel seguro da empresa, e não soltos no celular de funcionário.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Destaque que o foco da FCB é <b>aumentar a receita líquida</b> da pousada, reduzindo comissões de terceiros e eliminando perda por lentidão.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: POR ONDE OS CLIENTES FALAM -->
+    <section class="slide" data-cap="Situação" data-tit="Por onde seus clientes falam">
+      <div class="fit">
+        <div class="olho">Diagnóstico de Situação</div>
+        <h2>Por onde os viajantes <b>falam com você</b> hoje?</h2>
+        <p class="lede">Marque na tela junto com o proprietário. Cada canal conectado é uma porta de entrada da pousada que precisa de alguém para responder com agilidade.</p>
+        <div class="chips">
+          <button class="chip" aria-pressed="true"><i>💬</i> WhatsApp Principal da Pousada</button>
+          <button class="chip" aria-pressed="true"><i>📸</i> Instagram Direct</button>
+          <button class="chip" aria-pressed="true"><i>🏨</i> Booking.com (Mensagens)</button>
+          <button class="chip" aria-pressed="false"><i>🏡</i> Airbnb (Chat do Anfitrião)</button>
+          <button class="chip" aria-pressed="true"><i>📍</i> Google Meu Negócio</button>
+          <button class="chip" aria-pressed="false"><i>💻</i> Chat do Site Oficial</button>
+          <button class="chip" aria-pressed="false"><i>✉️</i> E-mail de Reservas</button>
+          <button class="chip" aria-pressed="true"><i>📞</i> Telefone da Recepção</button>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Deixe o cliente clicar nos chips. Mostre como a operação fica fragmentada quando existem 4 ou 5 canais sem sincronização.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: COMO VOCÊS CONTROLAM -->
+    <section class="slide" data-cap="Situação" data-tit="Como vocês controlam isso">
+      <div class="fit">
+        <div class="olho">Diagnóstico de Situação</div>
+        <h2>E como a pousada <b>controla</b> tudo isso?</h2>
+        <p class="lede">Sem julgamento — a grande maioria das pousadas brasileiras opera em alguma combinação disso. O que nos interessa é o que essa combinação custa em diárias perdidas.</p>
+        <div class="chips">
+          <button class="chip" aria-pressed="true"><i>📱</i> Celular pessoal do dono ou gerente</button>
+          <button class="chip" aria-pressed="true"><i>💻</i> WhatsApp Web no PC do balcão</button>
+          <button class="chip" aria-pressed="true"><i>📓</i> Caderno de reservas físico</button>
+          <button class="chip" aria-pressed="false"><i>📊</i> Planilha de Excel / Google Sheets</button>
+          <button class="chip" aria-pressed="false"><i>🏨</i> PMS / Sistema Hoteleiro</button>
+          <button class="chip" aria-pressed="false"><i>👥</i> Grupos de WhatsApp com camareiras</button>
+          <button class="chip" aria-pressed="false"><i>🤷</i> Nada formal, cada um anota onde dá</button>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Aponte o perigo do celular pessoal: quando o atendente sai da pousada ou vai embora, os contatos dos clientes vão juntos com ele.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: A CONVERSA QUE NINGUÉM PEGOU -->
+    <section class="slide tem-dor" data-cap="Problema" data-tit="A reserva que ninguém pegou">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho dor">O Custo Oculto</div>
+            <h2>O que acontece com a cotação que <b class="dor">ninguém pegou a tempo</b>?</h2>
+            <p class="lede">Ela não gera reclamação no Procon. Não aparece em nenhum relatório. O turista simplesmente abre a pousada seguinte no Instagram ou Google e você nunca fica sabendo.</p>
+            <ul class="itens" style="margin-top:20px">
+              <li><b>Quem viaja pesquisa 3 a 5 pousadas juntas:</b><span> ganha quem responder primeiro com clareza, fotos atraentes e facilidade de reserva.</span></li>
+              <li><b>Demora de 30 minutos é fatal:</b><span> à noite, 15 minutos sem resposta já fazem o hóspede fechar com a concorrência.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar" style="background:#e11d48">R$</div>
+                <div><b>Cotação de Pacote Feriado</b><em>Valor: R$ 2.400,00</em></div>
+              </div>
+              <div class="balao dele">
+                Oi! Vi as fotos dos chalés no Instagram. Tem vaga pro casal com hidro no feriado? Qual o pacote?
+                <span class="hora">19:15</span>
+              </div>
+              <div class="silencio">
+                — Recepcionista ocupada com check-in físico de 3 hóspedes —
+              </div>
+              <div class="balao dele">
+                Já reservei em outra pousada perto daí. Valeu!
+                <span class="hora">19:48</span>
+              </div>
+              <div style="background:#fee2e2;border:1px solid #fecaca;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#991b1b;font-weight:700">
+                ❌ Perda líquida: R$ 2.400,00 em 33 minutos de silêncio
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Esse é o slide de dor máxima. O dono da pousada gasta com tráfego e fotos no Instagram, o cliente chama no WhatsApp e a venda morre na recepção.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: OS QUATRO PONTOS ONDE TRAVA -->
+    <section class="slide tem-dor" data-cap="Problema" data-tit="Os quatro pontos onde trava">
+      <div class="fit">
+        <div class="olho dor">Gargalos Operacionais</div>
+        <h2>Os quatro pontos onde a reserva <b class="dor">quase sempre trava</b></h2>
+        <div class="grade g4">
+          <div class="cartao dor">
+            <span class="num">01 · Picos</span>
+            <h3>Sextas e Feriados</h3>
+            <p>Nos dias de maior procura chegam mais mensagens do que a recepção consegue abrir. As cotações ficam em fila — e o viajante não espera.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">02 · Noturno</span>
+            <h3>Noite e Madrugada</h3>
+            <p>Mais de 40% das buscas de viagens ocorrem entre 20h e 01h. A recepção fecha ou vai descansar, e o cliente esfria até o dia seguinte.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">03 · Repetição</span>
+            <h3>Perguntas Repetitivas</h3>
+            <p>A recepcionista gasta metade do expediente respondendo "aceita pet?", "tem piscina aquecida?", "qual o horário do café?" em vez de fechar vendas.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">04 · Sem Retorno</span>
+            <h3>Orçamento sem Follow-up</h3>
+            <p>A pousada envia o valor, o cliente não responde de imediato e ninguém faz o acompanhamento. Mais de 35% dessas reservas fechariam com um lembrete.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Pergunte: “Qual desses 4 pontos é o que mais tira o sono de vocês hoje?”. A maioria vai apontar a noite ou o tempo perdido com perguntas repetidas.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: CALCULADORA DO CUSTO DO SILÊNCIO -->
+    <section class="slide tem-dor" data-cap="Implicação" data-tit="Calculadora do custo do silêncio">
+      <div class="fit">
+        <div class="olho dor">Calculadora Financeira</div>
+        <h2>Vamos <b class="dor">colocar preço</b> nisso para a sua pousada</h2>
+        <div class="calc">
+          <div class="controles">
+            <div class="controle">
+              <label>Cotações recebidas por mês no WhatsApp: <b id="v-conv">300</b></label>
+              <input type="range" id="r-conv" min="50" max="1500" step="25" value="300">
+            </div>
+            <div class="controle">
+              <label>% de cotações que chegam fora de hora ou com demora: <b id="v-perc">30%</b></label>
+              <input type="range" id="r-perc" min="10" max="70" step="5" value="30">
+            </div>
+            <div class="controle">
+              <label>Taxa de conversão se respondido de imediato: <b id="v-conv2">15%</b></label>
+              <input type="range" id="r-conv2" min="5" max="40" step="1" value="15">
+            </div>
+            <div class="controle">
+              <label>Ticket médio da reserva / pacote de diárias: <b id="v-ticket">R$&nbsp;850</b></label>
+              <input type="range" id="r-ticket" min="300" max="3000" step="50" value="850">
+            </div>
+          </div>
+          <div class="resultado">
+            <div class="rot">Receita direta que escorre pela porta todo ano</div>
+            <div class="cifra dor" id="v-ano">R$&nbsp;137.700</div>
+            <div class="linha2">
+              <div>
+                <span>Por mês</span>
+                <b id="v-mes">R$&nbsp;11.475</b>
+              </div>
+              <div>
+                <span>Reservas perdidas/mês</span>
+                <b id="v-qtd">14</b>
+              </div>
+            </div>
+            <div class="sub">Esse valor não considera o custo das comissões pagas para a Booking quando o hóspede desiste do WhatsApp e reserva por lá.</div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Mova os sliders junto com o cliente usando os números reais da pousada dele. Quando ele vê R$ 100k a R$ 200k por ano perdidos, a plataforma se torna barata.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: O CUSTO QUE NÃO APARECE NA CONTA -->
+    <section class="slide tem-dor" data-cap="Implicação" data-tit="O custo que não aparece na conta">
+      <div class="fit">
+        <div class="olho dor">Impacto Invisível</div>
+        <h2>E tem o custo que <b class="dor">não aparece</b> no demonstrativo</h2>
+        <div class="grade g3">
+          <div class="cartao dor">
+            <span class="num">01 · Comissões OTAs</span>
+            <h3>18% a 22% deixados para a Booking</h3>
+            <p>O hóspede conheceu a pousada no Instagram, chamou no WhatsApp e, sem retorno rápido, correu para a Booking. Você pagou comissão em um cliente que já era seu.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">02 · Experiência no Balcão</span>
+            <h3>Hóspede presencial mal atendido</h3>
+            <p>A recepcionista precisa dar atenção ao hóspede que acabou de chegar, mas não consegue tirar o olho do celular apitando. A experiência de check-in cai de nível.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">03 · Reputação &amp; Notas</span>
+            <h3>Avaliações baixas por demora</h3>
+            <p>“Difícil de contatar”, “não respondem mensagem”. A nota no Google e TripAdvisor cai, e recuperar nota baixa no turismo custa caro.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>A dor da comissão de OTA é universal entre proprietários de pousadas. Bater nessa tecla cria cumplicidade imediata.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: AGORA ME DIZ VOCÊ -->
+    <section class="slide" data-cap="Necessidade" data-tit="Agora me diz você">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Momento de Decisão</div>
+            <h2>Agora <br><b>me diz você:</b></h2>
+            <p class="lede">Três perguntas sinceras para entender se a sua pousada está pronta para o próximo nível de eficiência e vendas diretas.</p>
+          </div>
+          <div>
+            <ul class="perguntas">
+              <li>
+                <span>01</span>
+                <p>Se todo viajante recebesse fotos dos chalés, preços e regras em menos de 1 minuto, inclusive na madrugada de domingo, <b>quantas reservas a mais você fecharia?</b></p>
+              </li>
+              <li>
+                <span>02</span>
+                <p>Se 30% das reservas que hoje pagam 20% de comissão para a Booking fossem fechadas <b>direto no seu Pix</b>, quanto sobraria a mais no final do ano?</p>
+              </li>
+              <li>
+                <span>03</span>
+                <p>Se o histórico e os contatos de todos os hóspedes ficassem <b>seguros na pousada</b> e não no WhatsApp pessoal de funcionários?</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Fique em silêncio e deixe o cliente responder cada uma das três perguntas. Isso consolida a necessidade da compra na cabeça dele.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: COMO A PLATAFORMA RESOLVE -->
+    <section class="slide" data-cap="A plataforma" data-tit="Como a plataforma resolve">
+      <div class="fit">
+        <div class="olho">A Solução FCB</div>
+        <h2>É exatamente isso que a <b>plataforma faz</b></h2>
+        <p class="lede">Uma operação hoteleira inteira de atendimento em um único lugar: recebe, organiza, envia fotos, tira dúvidas, cobra no Pix e acompanha o hóspede até o check-out.</p>
+        <div class="grade g4">
+          <div class="cartao bom">
+            <span class="num">01 · Centraliza</span>
+            <h3>Todos os Canais</h3>
+            <p>WhatsApp, Instagram, Booking, Direct e Site em uma caixa de entrada compartilhada para toda a equipe.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">02 · Concierge IA</span>
+            <h3>IA Hoteleira 24/7</h3>
+            <p>Responde na hora políticas pet, café da manhã, distâncias e monta cotações automáticas com base nas datas.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">03 · Organização</span>
+            <h3>Funil de Reservas</h3>
+            <p>Etiquetas de status: Cotação, Aguardando Sinal, Confirmada, Check-in Hoje, Check-out e Pós-estadia.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">04 · Reativação</span>
+            <h3>Régua de Hóspedes</h3>
+            <p>Lembretes automáticos para hóspedes do ano passado voltarem na mesma data com reserva direta.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Transição para a apresentação da ferramenta: agora mostre que o produto entrega exatamente as respostas das perguntas do slide anterior.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: ATENDIMENTO ORGANIZADO & ETIQUETAS -->
+    <section class="slide" data-cap="A plataforma" data-tit="Atendimento organizado">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Organização Visual</div>
+            <h2>Uma tela só, com todo o <b>contexto do hóspede</b></h2>
+            <ul class="itens">
+              <li><b>Etiquetas de hospitalidade:</b><span> — "Aguardando Pix 50%", "Cotação Enviada", "Check-in Hoje", "Pet Friendly", "Suíte Master". A fila vira status visual.</span></li>
+              <li><b>Transferência com histórico:</b><span> — passa da IA para a recepção ou da recepção para a gerência sem o hóspede ter que repetir nada.</span></li>
+              <li><b>Notas internas privadas:</b><span> — a recepção anota preferências do hóspede (ex: "comemoração de aniversário de casamento") visíveis apenas para a equipe.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Atendimento #4829 · WhatsApp</b>
+                <span class="pms-tag sinal">Aguardando Sinal 50%</span>
+              </div>
+              <div class="pms-linha">
+                <div class="pms-box"><span>Hóspede</span><b>Mariana Castro</b></div>
+                <div class="pms-box"><span>Acomodação</span><b>Chalé Vista da Serra</b></div>
+              </div>
+              <div class="pms-linha">
+                <div class="pms-box"><span>Período</span><b>12/Nov a 15/Nov (3 diárias)</b></div>
+                <div class="pms-box"><span>Valor Total</span><b>R$ 2.100,00</b></div>
+              </div>
+              <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:10px;font-size:12px;color:#166534;margin-top:8px">
+                ✓ Cotação gerada pela IA · Chave Pix gerada · Aguardando comprovante
+              </div>
+              <button class="pms-btn">Confirmar Reserva &amp; Notificar Camareira</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Destaque a facilidade das etiquetas. Em vez de olhar 150 conversas sem saber quem pagou, a recepção bate o olho e vê quem está aguardando sinal.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: ENCERRAMENTO QUE VIRA DADO -->
+    <section class="slide" data-cap="A plataforma" data-tit="Encerramento que vira dado">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Inteligência de Mercado</div>
+            <h2>Nenhuma conversa fecha <b>sem motivo registrado</b></h2>
+            <p class="lede">No WhatsApp comum, quando alguém não fecha você não sabe por quê. Na FCB Automações, todo encerramento vira estatística valiosa para a pousada.</p>
+            <ul class="itens">
+              <li><b>Reserva Fechada (Direta):</b><span> métrica de faturamento gerado pelo canal.</span></li>
+              <li><b>Sem Disponibilidade:</b><span> mede a demanda reprimida para planejar expansão ou tarifa dinâmica.</span></li>
+              <li><b>Preço / Fora do Orçamento:</b><span> ajuda a calibrar pacotes de baixa temporada.</span></li>
+              <li><b>Dúvida Geral / Política:</b><span> ajuda a refinar a base de conhecimento do bot.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Finalizar Atendimento</b>
+                <span class="pms-tag checkin">Tabulação</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label style="font-size:12px;color:var(--muted)">Selecione o desfecho do contato:</label>
+                <div style="padding:9px 12px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;font-size:13px;font-weight:700;color:#166534">
+                  🟢 Reserva Direta Confirmada (R$ 1.800,00)
+                </div>
+                <div style="padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--muted)">
+                  ⚪ Data Sem Vagas (Demanda Perdida)
+                </div>
+                <div style="padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--muted)">
+                  ⚪ Desistência por Valor
+                </div>
+                <div style="padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--muted)">
+                  ⚪ Não aceitou política de cancelamento
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Saber quantas pessoas quiseram reservar no feriado e não tinham vaga é o melhor dado para o dono saber se pode aumentar o preço da diária.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: REABERTURA AGENDADA / FOLLOW-UP -->
+    <section class="slide" data-cap="A plataforma" data-tit="Reabertura agendada">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Recuperação de Reservas</div>
+            <h2>O orçamento sai, mas o <b>compromisso fica marcado</b></h2>
+            <p class="lede">“Vou ver com meu marido e te respondo” é a frase que mais mata reservas em pousadas. Aqui ela não depende da memória de ninguém: o sistema faz o follow-up na hora certa.</p>
+            <ul class="itens">
+              <li><b>Gatilho de 4 horas:</b><span> se o hóspede não respondeu o orçamento, o bot reabre com uma mensagem simpática: “Olá Bruno, ainda temos 1 chalé disponível para esse fim de semana. Quer que eu segure para você?”</span></li>
+              <li><b>Taxa de resgate:</b><span> até 38% das pessoas que não responderam fecham a reserva após o follow-up.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar">FCB</div>
+                <div><b>Concierge Automático</b><em>Follow-up Inteligente</em></div>
+              </div>
+              <div class="balao dele">
+                Adorei a suíte! Vou mostrar as fotos para a minha noiva hoje à noite e qualquer coisa te chamo.
+                <span class="hora">14:10</span>
+              </div>
+              <div class="silencio">— 4 horas depois (18:10) —</div>
+              <div class="balao meu ia">
+                <span class="ia-tag">Automação de Follow-up</span><br>
+                Olá Carlos! Passando só para avisar que abrimos a última vaga para o Chalé com Lareira nas datas que você pediu. Quer que eu garanta a pré-reserva até as 21h? 😊
+                <span class="hora">18:10</span>
+              </div>
+              <div class="balao dele">
+                Oi! Que bom que chamou, ela adorou! Pode mandar a chave Pix para o sinal de 50% por favor?
+                <span class="hora">18:14</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Mostre como o follow-up não é invasivo, mas sim atencioso e consultivo. É dinheiro resgatado que já estava praticamente perdido.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 14: TAREFAS E CHAT INTERNO -->
+    <section class="slide" data-cap="A plataforma" data-tit="Tarefas e chat interno">
+      <div class="fit">
+        <div class="olho">Operação Integrada</div>
+        <h2>O que a equipe combina <b>fica dentro da ferramenta</b></h2>
+        <p class="lede">Recado em grupo pessoal de WhatsApp com camareiras e manutenção se perde, não tem dono e gera falhas constrangedoras com o hóspede.</p>
+        <div class="grade g4">
+          <div class="cartao">
+            <span class="num">Recepção · Governança</span>
+            <h3>Limpeza Antecipada</h3>
+            <p>“Hóspede do Chalé 06 chega às 12h, priorizar limpeza”. Fica registrado no perfil do cliente.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Recepção · Manutenção</span>
+            <h3>Chamados Rápidos</h3>
+            <p>Registro de troca de lâmpada ou ajuste de ar condicionado colado no número do quarto.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Recepção · Cozinha</span>
+            <h3>Dietas e Alergias</h3>
+            <p>Aviso prévio para o café da manhã de hóspedes celíacos ou veganos sem papel solto.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Equipe · Gestão</span>
+            <h3>Passagem de Turno</h3>
+            <p>A recepcionista da noite vê exatamente o que a da manhã combinou, sem surpresas no balcão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Eliminar grupos caóticos de WhatsApp entre funcionários é um dos maiores alívios de gestão para quem comanda uma pousada.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: FILAS E REGRAS DE DISTRIBUIÇÃO -->
+    <section class="slide" data-cap="A plataforma" data-tit="Filas e regras de distribuição">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Fluxo Inteligente</div>
+            <h2>As regras da pousada viram <b>configuração simples</b></h2>
+            <ul class="itens">
+              <li><b>Fila de Novas Cotações:</b><span> prioridade máxima para a IA atender em menos de 1 minuto e enviar opções de quartos.</span></li>
+              <li><b>Fila de Hóspedes Hospedados:</b><span> pedidos de toalhas, informações sobre passeios ou transfer vão direto para o balcão.</span></li>
+              <li><b>Distribuição balanceada:</b><span> divide as conversas entre os recepcionistas sem sobrecarregar ninguém.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="grade g2">
+              <div class="cartao bom">
+                <span class="num">Fila 01 · Reservas</span>
+                <h3>Cotações de Diárias</h3>
+                <p>IA faz a triagem inicial e entrega para o time com datas e número de pessoas já tabulados.</p>
+              </div>
+              <div class="cartao">
+                <span class="num">Fila 02 · Recepção</span>
+                <h3>Hóspede no Local</h3>
+                <p>Dúvidas de Wi-Fi, pedidos de café no quarto e dicas locais com atendimento humano.</p>
+              </div>
+              <div class="cartao">
+                <span class="num">Fila 03 · Financeiro</span>
+                <h3>Comprovantes &amp; Notas</h3>
+                <p>Envio de notas fiscais de empresas e confirmação de transferências bancárias.</p>
+              </div>
+              <div class="cartao">
+                <span class="num">Fila 04 · Parcerias</span>
+                <h3>Passeios &amp; Transfers</h3>
+                <p>Indicações de passeios de lancha, 4x4 ou guias com comissão para a pousada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>A separação de filas impede que uma dúvida sobre a senha do Wi-Fi atrase uma cotação de pacote de R$ 3.000,00.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 16: CONTATOS: A BASE É DA POUSADA -->
+    <section class="slide" data-cap="A plataforma" data-tit="Contatos: a base é da pousada">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Patrimônio Digital</div>
+            <h2>A base de hóspedes <b>deixa de morar no celular</b></h2>
+            <p class="lede">Quando um recepcionista sai da pousada, o histórico não pode ir embora com ele. Aqui cada turista vira um ativo permanente da sua empresa.</p>
+            <ul class="itens">
+              <li><b>Ficha completa:</b><span> nome, WhatsApp, CPF, cidade de origem, e-mail e aniversários.</span></li>
+              <li><b>Histórico de estadias:</b><span> em qual chalé ficou, quanto pagou e como prefere a cama.</span></li>
+              <li><b>Etiquetas de perfil:</b><span> "Gosta de vinho", "Viaja com cachorro", "Vem todo Réveillon".</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Perfil do Hóspede VIP</b>
+                <span class="pms-tag reserva">3 Estadias Realizadas</span>
+              </div>
+              <div style="font-size:13px;color:var(--navy);line-height:1.6">
+                <b>Nome:</b> Dr. Eduardo Prado &amp; Família<br>
+                <b>WhatsApp:</b> (11) 98765-4321 · São Paulo/SP<br>
+                <b>Pet:</b> Golden Retriever (Thor) · <i>Acomodação térrea obrigatória</i><br>
+                <b>Preferência:</b> Travesseiro de pluma, café sem glúten.<br>
+                <b>Total investido na pousada:</b> R$ 7.450,00 em reservas diretas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Lembre o dono que a maior riqueza de um hotel boutique é a fidelidade. Conhecer o hóspede pelo nome transforma visitantes em embaixadores da marca.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 17: HISTÓRICO E AUDITORIA -->
+    <section class="slide" data-cap="A plataforma" data-tit="Histórico e auditoria">
+      <div class="fit">
+        <div class="olho">Segurança Operacional</div>
+        <h2>Toda conversa fica <b>registrada com protocolo</b></h2>
+        <p class="lede">Evite discussões sobre “mas o atendente me disse que o check-out era às 14h sem custo”. Todo o histórico fica arquivado e acessível com 1 clique.</p>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Busca Instantânea</span>
+            <h3>Por número, nome ou data</h3>
+            <p>Encontre qualquer conversa de meses atrás em segundos, com áudios e imagens preservados.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Auditoria de Equipe</span>
+            <h3>Transparência de atendimento</h3>
+            <p>Saiba quem atendeu, o horário de cada mensagem e o tempo que a recepção levou para responder.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Políticas Claras</span>
+            <h3>Registro de cancelamento</h3>
+            <p>Comprovação transparente de envio das regras tarifárias e condições de cancelamento acordadas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Segurança jurídica em cancelamentos e no-show é uma das maiores dores de cabeça de quem administra reservas.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 18: AUTOMAÇÃO, URA E GATILHOS -->
+    <section class="slide" data-cap="A plataforma" data-tit="Automação, URA e gatilhos">
+      <div class="fit">
+        <div class="olho">Operação Sem Pausa</div>
+        <h2>A pousada responde <b>quando ninguém está olhando</b></h2>
+        <div class="grade g3">
+          <div class="cartao bom">
+            <span class="num">01 · Boas-vindas</span>
+            <h3>Menu Inteligente Humanizado</h3>
+            <p>Saudação acolhedora com o nome da pousada, identificando se é nova cotação ou hóspede em estadia.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">02 · Fora de Horário</span>
+            <h3>Guardião Noturno 24/7</h3>
+            <p>Madrugada ativa: tira dúvidas de localização, envia link do tarifário e captura o lead para fechar.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">03 · Pré-Check-in</span>
+            <h3>Guia Automático de Chegada</h3>
+            <p>Disparo automático 24h antes da viagem com rota no Waze, previsão do tempo e horário do café.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>O guia pré-check-in reduz em 80% as mensagens de “como faz para chegar?”, “qual a localização no GPS?”. O hóspede se sente acolhido antes mesmo de pisar na pousada.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 19: PADRÃO DE RESPOSTA -->
+    <section class="slide" data-cap="A plataforma" data-tit="Padrão de resposta">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Comunicação Impecável</div>
+            <h2>Toda a equipe responde no <b>padrão da casa</b></h2>
+            <ul class="itens">
+              <li><b>Mensagens pré-definidas com 1 clique:</b><span> — políticas de cancelamento, regras para pets, tabela de passeios e dados de Pix da pousada.</span></li>
+              <li><b>Galeria de fotos organizada:</b><span> — fotos profissionais dos chalés separadas por categoria para envio imediato no WhatsApp.</span></li>
+              <li><b>Elimina erros de digitação:</b><span> — chave Pix e valores de pacotes saem sempre corretos, sem falha humana.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Respostas Rápidas Salvas</b>
+                <span class="pms-tag checkin">Atalhos</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;font-size:12.5px">
+                <div style="padding:8px 12px;background:var(--ice);border-radius:8px"><b>/pix</b> — Envio de dados bancários e chave Pix oficial</div>
+                <div style="padding:8px 12px;background:var(--ice);border-radius:8px"><b>/fotos-master</b> — Fotos em alta da Suíte Master com Hidro</div>
+                <div style="padding:8px 12px;background:var(--ice);border-radius:8px"><b>/pet</b> — Política completa de acolhimento de pets</div>
+                <div style="padding:8px 12px;background:var(--ice);border-radius:8px"><b>/chegar</b> — Localização no Google Maps e dicas de estrada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Evita aquele atendente que manda mensagem sem pontuação ou sem educação. O padrão de hospitalidade é mantido em 100% dos contatos.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 20: APLICATIVO PARA O ATENDENTE -->
+    <section class="slide" data-cap="A plataforma" data-tit="Aplicativo para o atendente">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Mobilidade Total</div>
+            <h2>A recepção e a gerência <b>onde você estiver</b></h2>
+            <ul class="itens">
+              <li><b>App completo para iOS e Android:</b><span> — responda cotações e atenda hóspedes da pousada sem ficar preso à mesa do computador.</span></li>
+              <li><b>Foto do quarto na hora:</b><span> — a camareira fotografa a banheira decorada para um pacote de lua de mel e envia para a recepção aprovar.</span></li>
+              <li><b>Sem misturar conversas:</b><span> — o funcionário usa o app no celular dele, mas o número que fala com o hóspede é o oficial da pousada.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div style="background:var(--navy);border-radius:24px;padding:24px;color:#fff;box-shadow:var(--shadow)">
+              <div style="font-family:var(--mono);font-size:10px;color:var(--teal-glow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px">App FCB Automações</div>
+              <h3 style="color:#fff;margin-bottom:12px">Controle na palma da mão</h3>
+              <p style="font-size:13px;color:#94a3b8;line-height:1.5">O dono da pousada pode viajar tranquilo ou estar na rua: as notificações de novas reservas caem no app em tempo real com status financeiro atualizado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Donos de pousadas pequenas muitas vezes moram perto ou circulam pela propriedade. Ter o app profissional dá liberdade sem perder vendas.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 21: CRM E FUNIL DE VENDAS -->
+    <section class="slide" data-cap="A plataforma" data-tit="CRM e funil de vendas">
+      <div class="fit">
+        <div class="olho">Gestão Comercial</div>
+        <h2>O funil de reservas <b>na mesma tela</b></h2>
+        <p class="lede">Chega de post-its colados no monitor ou perder reservas porque esqueceu de cobrar o comprovante. Cada oportunidade tem etapa, valor e responsável.</p>
+        <div class="tab">
+          <div class="bloco">
+            <h4>01 · Nova Cotação</h4>
+            <ul>
+              <li><i></i> Interessados via WhatsApp</li>
+              <li><i></i> Verificação de datas</li>
+              <li><i></i> Disparo de opções</li>
+            </ul>
+          </div>
+          <div class="bloco" style="border-color:var(--teal)">
+            <h4 style="color:var(--teal)">02 · Orçamento Enviado</h4>
+            <ul>
+              <li><i></i> Valores e fotos entregues</li>
+              <li><i></i> Gatilho de follow-up ativo</li>
+              <li><i></i> Aguardando decisão</li>
+            </ul>
+          </div>
+          <div class="bloco" style="border-color:var(--gold)">
+            <h4 style="color:var(--gold)">03 · Aguardando Sinal</h4>
+            <ul>
+              <li><i></i> Chave Pix enviada</li>
+              <li><i></i> Prazo de 2h para segurar</li>
+              <li><i></i> Conferência bancária</li>
+            </ul>
+          </div>
+          <div class="bloco" style="background:#f0fdf4;border-color:#86efac">
+            <h4 style="color:#15803d">04 · Confirmada</h4>
+            <ul>
+              <li><i></i> Reserva garantida</li>
+              <li><i></i> Comprovante emitido</li>
+              <li><i></i> Bloqueio no mapa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>O funil Kanban mostra visualmente onde está travando a venda. Dá para saber quantos orçamentos estão parados esperando pagamento de sinal.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 22: BOTÕES RÁPIDOS E FLUXOS -->
+    <section class="slide" data-cap="A plataforma" data-tit="Botões rápidos e fluxos">
+      <div class="fit">
+        <div class="olho">Produtividade Máxima</div>
+        <h2>Botões rápidos, <b>personalizados para pousadas</b></h2>
+        <p class="lede">Ao lado da conversa fica um painel de ações criado sob medida para o seu time. Um clique move a reserva no funil, dispara instruções e gera o recibo sem esforço manual.</p>
+        <div class="grade g3" style="margin-top:20px">
+          <div class="cartao bom">
+            <span class="num">Ação Rápida 01</span>
+            <h3>Gerar Chave Pix de Sinal</h3>
+            <p>Cria na hora o valor exato de 50% com código Copia e Cola e QR Code dentro da própria conversa.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Ação Rápida 02</span>
+            <h3>Emitir Voucher de Reserva</h3>
+            <p>Dispara o PDF oficial com as datas de check-in, acomodação e regras da pousada preenchidas.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Ação Rápida 03</span>
+            <h3>Enviar Guia de Experiências</h3>
+            <p>Manda o cardápio de massagens, passeios de barco e trilhas com parceiros credenciados.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Mostre como um processo de 5 minutos (calcular sinal, copiar chave Pix, montar texto) é reduzido a um único clique.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 23: SUPORTE VISUAL REMOTO -->
+    <section class="slide" data-cap="A plataforma" data-tit="Suporte visual remoto">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Experiência do Hóspede</div>
+            <h2>Ajudar o hóspede <b>vendo o que ele está vendo</b></h2>
+            <p class="lede">O hóspede se perdeu na estrada de terra à noite? Ou não está conseguindo ligar a hidromassagem? Você envia um link no WhatsApp, a câmera abre no navegador dele sem baixar nenhum aplicativo.</p>
+            <ul class="itens">
+              <li><b>Sem cadastro ou app:</b><span> funciona direto no navegador do celular do visitante.</span></li>
+              <li><b>Guia de acesso imediato:</b><span> a recepção vê a placa da estrada e orienta o caminho certo em segundos.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div style="background:var(--ice);border:1px solid var(--line);border-radius:20px;padding:24px;text-align:center">
+              <div style="font-size:36px;margin-bottom:10px">📍</div>
+              <h3 style="color:var(--navy)">Link de Suporte Visual</h3>
+              <p style="font-size:13px;color:var(--muted);max-width:320px;margin:0 auto 16px">O hóspede clica no WhatsApp e a câmera se conecta com a recepção para resolver dúvidas no local.</p>
+              <div style="font-family:var(--mono);font-size:11px;background:#fff;border:1px dashed var(--teal);padding:8px 14px;border-radius:99px;color:var(--teal)">
+                fcb.link/ajuda-hospede-0482
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Muito comum em pousadas de serra, praia ou locais de difícil acesso: o hóspede liga perdido na estrada. Isso resolve em 1 minuto.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 24: POR QUE NÃO É SÓ UMA VIDEOCHAMADA -->
+    <section class="slide" data-cap="A plataforma" data-tit="Por que não é uma videochamada">
+      <div class="fit">
+        <div class="olho">Diferencial Profissional</div>
+        <h2>Por que isso <b>não é uma chamada comum</b> de WhatsApp?</h2>
+        <table class="comp">
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>Chamada Comum no WhatsApp</th>
+              <th>Plataforma FCB Automações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Registro na Ficha</th>
+              <td class="nao">Some sem rastro</td>
+              <td class="sim">Fica anexado ao protocolo da reserva</td>
+            </tr>
+            <tr>
+              <th>Quem Atende</th>
+              <td class="nao">Toca no celular de quem tiver livre</td>
+              <td class="sim">Direcionado para a recepção em serviço</td>
+            </tr>
+            <tr>
+              <th>Privacidade</th>
+              <td class="nao">Expõe o número pessoal do funcionário</td>
+              <td class="sim">100% no número institucional da pousada</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Quebre a objeção: “Mas meu atendente já pode fazer vídeo pelo WhatsApp”. A diferença é a gestão, segurança e auditoria.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 25: O HÓSPEDE QUE SOME SEM AVISAR -->
+    <section class="slide tem-gold" data-cap="Retenção" data-tit="O hóspede que não volta">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho gold">Fidelização Ativa</div>
+            <h2>Ele amou a estadia ano passado. <b class="gold">Quem vai avisar</b> para voltar?</h2>
+            <p class="lede">A maior parte dos hóspedes de pousadas quer voltar no mesmo feriado ou data especial, mas a rotina atropela e eles acabam reservando onde virem primeiro. Se a sua pousada não chama com antecedência, ele vai para a concorrência.</p>
+            <ul class="itens">
+              <li><b>Data previsível:</b><span> viagens de Réveillon, Páscoa, aniversário de casamento e férias de julho acontecem todo ano.</span></li>
+              <li><b>Custo de aquisição ZERO:</b><span> vender para quem já conhece e amou o seu café da manhã custa 5x menos do que anunciar no Instagram.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="cartao gold" style="padding:26px">
+              <span class="num">Oportunidade Oculta</span>
+              <h3 style="font-size:18px;margin-bottom:10px">Mais de 55% dos hóspedes gostariam de retornar</h3>
+              <p style="font-size:13.5px;line-height:1.5">Mas menos de 5% das pousadas têm uma rotina automatizada de reativação de base. Quem lembra primeiro, fecha a reserva direta com 100% de margem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Esse é o slide que substitui a dor do remédio que acaba dia 28. O hóspede tem datas cíclicas de viagem. Use isso a favor da pousada!</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 26: RÉGUA DE RELACIONAMENTO E FIDELIZAÇÃO -->
+    <section class="slide" data-cap="Retenção" data-tit="Régua de relacionamento">
+      <div class="fit">
+        <div class="olho">Ciclo Completo do Hóspede</div>
+        <h2>Fidelidade não é dar desconto aleatório. <br>É <b>lembrar antes dele lembrar</b></h2>
+        <div class="passos">
+          <div class="passo">
+            <span class="q">D - 2 dias · Chegada</span>
+            <b>Boas-vindas VIP</b>
+            <p>Previsão do tempo, dicas de trânsito, horário do café e confirmação do horário estimado de check-in.</p>
+          </div>
+          <div class="passo">
+            <span class="q">D + 1 dia · Pós-estadia</span>
+            <b>Avaliação Google</b>
+            <p>Mensagem de agradecimento com link direto para avaliar com 5 estrelas no Google e TripAdvisor.</p>
+          </div>
+          <div class="passo">
+            <span class="q">D + 300 dias · Reativação</span>
+            <b>Reserva Antecipada</b>
+            <p>“Você esteve conosco no último Réveillon! Abrimos o lote antecipado exclusivo para hóspedes habituais sem taxa de OTA.”</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>A avaliação no Google no D+1 eleva a nota da pousada para 4.8 / 4.9 estrelas organicamente, atraindo dezenas de novos turistas.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 27: AS TRÊS CAMADAS DE IA -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="As três camadas de IA">
+      <div class="fit">
+        <div class="olho">Tecnologia com Propósito</div>
+        <h2>Três camadas de IA — <b>você entra pela que faz sentido hoje</b></h2>
+        <div class="grade g3">
+          <div class="cartao bom">
+            <span class="num">Camada 1 · 24 Horas</span>
+            <h3>LéIA Atende</h3>
+            <p>Faz a triagem inicial, tira dúvidas repetitivas de políticas, café, localização e desafoga a recepção no WhatsApp.</p>
+          </div>
+          <div class="cartao bom" style="border-width:2px;border-color:var(--teal)">
+            <span class="num">Camada 2 · Vendas</span>
+            <h3>LéIA Vende &amp; Cota</h3>
+            <p>Calcula o valor das diárias, seleciona a melhor acomodação disponível, envia fotos e conduz a reserva até o Pix.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Camada 3 · Co-piloto</span>
+            <h3>LéIA ao Lado do Time</h3>
+            <p>A IA sugere a resposta perfeita em segundos na tela da recepcionista, que apenas revisa e envia.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Não force a pousada a automatizar 100% de cara se o dono for conservador. Mostre que ele pode começar com a Camada 1 ou 3 e evoluir no ritmo dele.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 28: LÉIA VENDE NA PRÁTICA -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="LéIA Vende na prática">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Do "Oi" ao Pix de Sinal</div>
+            <h2>Como a IA conduz a <b>reserva completa no chat</b></h2>
+            <ul class="itens">
+              <li><b>1. Lê textos e áudios com perfeição:</b><span> o cliente pode mandar um áudio de 1 minuto que a IA transcreve e entende as datas.</span></li>
+              <li><b>2. Consulta tarifário e acomodações:</b><span> verifica se tem vaga para casal ou família e traz o chalé correto.</span></li>
+              <li><b>3. Apresenta fotos e diferenciais:</b><span> manda a foto da banheira, varanda com rede e vista para encantar o viajante.</span></li>
+              <li><b>4. Entrega pronto para confirmação:</b><span> gera a cotação consolidada e chama a recepção apenas para conferir o sinal.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar">IA</div>
+                <div><b>LéIA · Concierge Digital</b><em>Online 24h</em></div>
+              </div>
+              <div class="balao dele">
+                🎤 <i>Mensagem de áudio (0:42)</i> — "Olá, queremos ir no fim de semana do dia 20 comemorar 5 anos de casamento. Tem algum chalé com hidro bem romântico?"
+              </div>
+              <div class="balao meu ia">
+                <span class="ia-tag">LéIA Vende</span><br>
+                Parabéns pelas Bodas de Madeira! 🥂 Temos sim! O nosso <b>Chalé Master Panorama</b> é perfeito para a ocasião: conta com hidromassagem dupla com vista para o pôr do sol e lareira a lenha.<br><br>
+                Período: <b>20 a 22/Out (2 diárias)</b><br>
+                Valor: <b>R$ 1.580,00</b> com café colonial incluso.<br>
+                Posso enviar as fotos aqui para vocês verem?
+                <span class="hora">23:14</span>
+              </div>
+              <div class="balao dele">
+                Nossa, que atendimento rápido! Manda as fotos sim por favor!
+                <span class="hora">23:15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>O fato de a IA ouvir áudio é um divisor de águas: quem está dirigindo ou no trânsito manda áudio para a pousada e é respondido na hora.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 29: IA AO LADO DO ATENDENTE -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="IA ao lado do atendente">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Co-piloto da Recepção</div>
+            <h2>A IA também trabalha <b>para quem está atendendo</b></h2>
+            <p class="lede">A porta de entrada ideal para pousadas que preferem manter o toque 100% humano: a IA não fala com o hóspede, ela senta ao lado da recepcionista e sugere a resposta perfeita em 1 segundo.</p>
+            <ul class="itens">
+              <li><b>Sugestão inteligente de resposta:</b><span> a recepcionista só clica em "aprovar" ou edita se quiser adicionar um toque pessoal.</span></li>
+              <li><b>Treinamento instantâneo de novos funcionários:</b><span> um atendente novo responde com a mesma qualidade de quem tem 5 anos de casa.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Painel do Atendente com IA Co-piloto</b>
+                <span class="pms-tag checkin">Sugestão Pronta</span>
+              </div>
+              <div style="background:#f1f5f9;border-radius:10px;padding:12px;font-size:12.5px;color:#334155;margin-bottom:12px">
+                <b>Pergunta do Hóspede:</b> "A piscina fica aberta até que horas e o café começa quando?"
+              </div>
+              <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px;font-size:12.5px;color:#166534">
+                ✨ <b>Sugestão da LéIA:</b><br>
+                "Olá Ana! Nossa piscina aquecida fica aberta até às 22h para relaxar após os passeios. O café da manhã artesanal é servido das 08h às 11h com pães quentinhos e bolos caseiros. Quer reservar uma massagem para a tarde?"
+              </div>
+              <button class="pms-btn" style="margin-top:10px">Enviar esta resposta (Enter)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Esse slide quebra qualquer resistência de clientes que dizem: “Nossa pousada é muito exclusiva, quero que apenas humanos falem”. A IA potencializa o humano.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 30: IA QUE REVISA O ATENDIMENTO -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="IA que revisa o atendimento">
+      <div class="fit">
+        <div class="olho">Qualidade Contínua</div>
+        <h2>Auditoria por IA: <b>nota para cada conversa</b></h2>
+        <p class="lede">Hoje o proprietário da pousada não tem tempo de ler centenas de conversas no WhatsApp. A IA da FCB avalia 100% dos diálogos com base em critérios hoteleiros.</p>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Critério 01</span>
+            <h3>Cordialidade &amp; Acolhimento</h3>
+            <p>Verifica se a recepcionista usou o nome do hóspede, deu boas-vindas calorosas e manteve o tom da pousada.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Critério 02</span>
+            <h3>Tentativa de Fechamento</h3>
+            <p>Mede se o atendente enviou a chave Pix e convidou o cliente para fechar ou se deixou o orçamento solto.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Critério 03</span>
+            <h3>Clareza nas Políticas</h3>
+            <p>Garante que horários de check-in/out e regras sobre pets foram devidamente explicados antes do sinal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Feedback em tempo real para a equipe melhora a conversão mês a mês de forma automática.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 31: PAGAMENTO NA CONVERSA -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="Pagamento na conversa">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Conversão Imediata</div>
+            <h2>O sinal de reserva acontece <b>dentro da mesma conversa</b></h2>
+            <p class="lede">Sem mandar o cliente para outro site cheio de etapas, sem ele desistir no carrinho. A chave Pix copia-e-cola ou o link de cartão é gerado ali mesmo.</p>
+            <ul class="itens">
+              <li><b>Pix Instantâneo Copia e Cola:</b><span> o cliente copia no WhatsApp, cola no app do banco e paga em 20 segundos.</span></li>
+              <li><b>Link de Cartão Parcelado:</b><span> integração com Cielo, PagSeguro, Asaas, Mercado Pago ou Stone.</span></li>
+              <li><b>Confirmação automática:</b><span> o sistema valida o pagamento e já altera o status para "Reserva Confirmada".</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="conversa">
+              <div class="topo">
+                <div class="avatar" style="background:#15803d">PIX</div>
+                <div><b>Pagamento de Sinal 50%</b><em>R$ 790,00</em></div>
+              </div>
+              <div class="balao meu ia">
+                Aqui está o seu Pix Copia e Cola para garantir a reserva do Chalé Master:<br><br>
+                <code style="display:block;background:rgba(0,0,0,.2);padding:6px;border-radius:6px;font-size:10px;word-break:break-all">00020126580014br.gov.bcb.pix0136fcb-pousada-pix-1234567895204000053039865407790.00...</code>
+                <span class="hora">23:18</span>
+              </div>
+              <div style="background:#dcfce7;border:1px solid #86efac;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#15803d;font-weight:700">
+                ✅ PIX CONFIRMADO EM 14 SEGUNDOS! Reserva #4829 Garantida.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Quanto menor a fricção para pagar o sinal, maior a taxa de fechamento. Não mande o cliente para links externos complicados.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 32: O QUE A IA NÃO FAZ -->
+    <section class="slide" data-cap="Inteligência artificial" data-tit="O que a IA não faz">
+      <div class="fit">
+        <div class="olho">Limites &amp; Segurança</div>
+        <h2>O que a nossa IA <b>deliberadamente NÃO faz</b></h2>
+        <p class="lede">Preferimos alinhar isso na reunião comercial do que gerar surpresas na implantação. São limites de segurança desenhados para proteger a sua pousada.</p>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Limite 01</span>
+            <h3>Não dá desconto sem autorização</h3>
+            <p>A IA respeita estritamente o tarifário cadastrado. Se o cliente pedir desconto, ela transfere para o gerente.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Limite 02</span>
+            <h3>Não altera políticas de cancelamento</h3>
+            <p>Regras de não comparecimento ou devolução de sinal seguem à risca o contrato da pousada.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Limite 03</span>
+            <h3>Não inventa informações</h3>
+            <p>Se o hóspede fizer uma pergunta atípica não cadastrada, a IA avisa gentilmente que vai consultar a equipe humana.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Esse slide traz enorme alívio para donos conservadores. Mostra maturidade tecnológica da FCB Automações.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 33: INTEGRAÇÕES COM PMS E MOTORES -->
+    <section class="slide" data-cap="Integrações" data-tit="Integrações e PMS">
+      <div class="fit">
+        <div class="olho">Conectividade</div>
+        <h2>Conecta ao <b>sistema que a sua pousada já usa</b></h2>
+        <p class="lede">Você não precisa trocar o seu sistema de hotelaria para usar a FCB Automações. A plataforma conversa com a sua operação existente.</p>
+        <div class="grade g4">
+          <div class="cartao">
+            <span class="num">PMS Hoteleiro</span>
+            <h3>Cloudbeds</h3>
+            <p>Sincronização de disponibilidade de quartos e reservas.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">PMS Nacional</span>
+            <h3>Hospedin</h3>
+            <p>Integração fluida para pousadas de pequeno e médio porte.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Hotelaria Tradicional</span>
+            <h3>Desbravador / Silbeck</h3>
+            <p>Conexão com motores consolidados do mercado de turismo.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Canais &amp; WhatsApp</span>
+            <h3>WhatsApp Cloud API</h3>
+            <p>Linha oficial verificada pela Meta, sem risco de bloqueio de chip.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Pergunte qual é o PMS ou motor de reservas deles hoje. Se usarem apenas planilha, mostre que a FCB já resolve tudo do início ao fim.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 34: DASHBOARDS DE ATENDIMENTO -->
+    <section class="slide" data-cap="Gestão" data-tit="Dashboard de atendimentos">
+      <div class="fit">
+        <div class="olho">Controle na Tela</div>
+        <h2>O painel que responde: <b>"Como foram as reservas hoje?"</b></h2>
+        <div class="grade g4">
+          <div class="cartao bom">
+            <span class="num">Métrica 01</span>
+            <h3>Volume de Cotações</h3>
+            <p>Quantos novos viajantes procuraram a pousada em cada dia da semana.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Métrica 02</span>
+            <h3>TMPR</h3>
+            <p>Tempo Médio de Primeira Resposta — o número que mais explica reserva ganha ou perdida.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Métrica 03</span>
+            <h3>Picos de Mensagens</h3>
+            <p>Mostra exatamente os horários de maior fluxo para calibrar a escala da recepção.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Métrica 04</span>
+            <h3>Receita Direta Gerada</h3>
+            <p>Total em R$ de sinais e reservas convertidas pelo WhatsApp no período.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Gestão baseada em dados: o proprietário finalmente sabe quanto o canal de WhatsApp está gerando de faturamento real.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 35: PAINEL DE AGENTES EM TEMPO REAL -->
+    <section class="slide" data-cap="Gestão" data-tit="Painel de agentes em tempo real">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Supervisão Ativa</div>
+            <h2>Quem está <b>atendendo os hóspedes agora</b></h2>
+            <ul class="itens">
+              <li><b>Status em tempo real:</b><span> — veja quem da recepção está disponível, ocupado ou em intervalo de almoço.</span></li>
+              <li><b>Alerta de mensagens paradas:</b><span> — conversas sem resposta há mais de 10 minutos acendem em vermelho na tela da gerência.</span></li>
+              <li><b>Intervenção ao vivo:</b><span> — o gerente pode entrar silenciosamente na conversa e ajudar a fechar a venda de pacotes grandes.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="pms-mock">
+              <div class="pms-topo">
+                <b>Painel da Recepção ao Vivo</b>
+                <span class="pms-tag reserva">3 Atendentes Online</span>
+              </div>
+              <div style="font-size:12.5px;color:var(--navy);line-height:1.7">
+                🟢 <b>Camila (Recepção Manhã):</b> 4 conversas abertas · 12 reservas fechadas hoje<br>
+                🟢 <b>Lucas (Reservas WhatsApp):</b> 6 conversas abertas · 18 cotações ativas<br>
+                🤖 <b>LéIA (Concierge Virtual):</b> 9 atendimentos simultâneos em andamento<br>
+                <div style="margin-top:10px;padding:8px;background:#fef2f2;border-radius:6px;color:#991b1b;font-size:11.5px">
+                  ⚠️ <b>Alerta:</b> 0 conversas aguardando mais de 3 minutos. Operação 100% no prazo!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Fim do desespero de não saber se os funcionários estão respondendo os clientes no WhatsApp ou se estão mexendo no celular particular.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 36: RELATÓRIOS DE FILAS E SLA -->
+    <section class="slide" data-cap="Gestão" data-tit="Relatórios de filas e agentes">
+      <div class="fit">
+        <div class="olho">Métricas Transparentes</div>
+        <h2>SLA, tempo de resposta e <b>conversão por recepcionista</b></h2>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Indicador 01</span>
+            <h3>Taxa de Conversão por Atendente</h3>
+            <p>Descubra quem na sua equipe fecha mais reservas de diárias e premie os melhores vendedores.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Indicador 02</span>
+            <h3>ESR (Encerrados sem Resposta)</h3>
+            <p>O indicador que nenhum dono quer ver e que só a FCB mede: turistas que desistiram esperando.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Indicador 03</span>
+            <h3>Nota Média dada pelo Hóspede</h3>
+            <p>Pesquisa CSAT automática de 1 a 5 enviada ao fim do atendimento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Ajuda a pousada a identificar necessidades de treinamento da equipe com base em dados concretos.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 37: MONITORAMENTO DE PRODUTIVIDADE -->
+    <section class="slide" data-cap="Gestão" data-tit="Monitoramento de produtividade">
+      <div class="fit">
+        <div class="olho">Eficiência do Time</div>
+        <h2>Produtividade clara: <b>quem vende e quem enrola</b></h2>
+        <p class="lede">Classificação automática do tempo de atendimento em tela: saiba exatamente quanto tempo a recepção gasta vendendo pacotes vs. tarefas secundárias.</p>
+        <div class="grade g4">
+          <div class="cartao bom">
+            <span class="num">Tempo em Vendas</span>
+            <h3>Atendimento Ativo</h3>
+            <p>Negociação de diárias, envio de fotos e fechamento de Pix.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Suporte Local</span>
+            <h3>Hóspede Atual</h3>
+            <p>Resolução de dúvidas no balcão e pedidos de quartos.</p>
+          </div>
+          <div class="cartao dor">
+            <span class="num">Atenção</span>
+            <h3>Tempo Ocioso</h3>
+            <p>Intervalos longos sem abrir novas conversas da fila.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Automatizado</span>
+            <h3>Horas Poupatas pela IA</h3>
+            <p>Média de 4 a 6 horas diárias de trabalho repetitivo absorvidas pela LéIA.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Economia de mão de obra: a pousada consegue atender 3x mais hóspedes sem precisar contratar mais funcionários para o WhatsApp.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 38: MÓDULOS COMPLEMENTARES -->
+    <section class="slide" data-cap="Gestão" data-tit="Módulos complementares">
+      <div class="fit">
+        <div class="olho">Crescimento com a Pousada</div>
+        <h2>O que mais entra <b>conforme a operação cresce</b></h2>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Módulo 01</span>
+            <h3>Campanhas &amp; Disparo em Massa</h3>
+            <p>Avisos no WhatsApp oficial de pacotes para o Réveillon ou feriados para a sua base de clientes antigos sem risco de banimento.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Módulo 02</span>
+            <h3>Pesquisa de Satisfação NPS</h3>
+            <p>Avaliação detalhada sobre café da manhã, limpeza e acomodações enviada após a saída do hóspede.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Módulo 03</span>
+            <h3>Multi-propriedades</h3>
+            <p>Gerencie duas pousadas ou chalés diferentes na mesma tela, com relatórios separados.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Se o cliente tiver mais de uma pousada ou chalés separados, mostre como o painel unifica tudo com extrema elegância.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 39: ECOSSISTEMA FCB ALÉM DA PLATAFORMA -->
+    <section class="slide" data-cap="Ecossistema" data-tit="O Hub além da plataforma">
+      <div class="fit">
+        <div class="olho">Parceria Estratégica</div>
+        <h2>A FCB Automações é o seu <b>braço de tecnologia e vendas</b></h2>
+        <p class="lede">A plataforma de atendimento é a porta de entrada. Quando o atendimento estiver rodando no piloto automático, outras soluções da FCB entram para acelerar a ocupação da pousada.</p>
+        <div class="grade g3">
+          <div class="cartao bom">
+            <span class="num">Aquisição</span>
+            <h3>Tráfego Pago para Pousadas</h3>
+            <p>Anúncios no Instagram e Google direcionando turistas direto para o WhatsApp oficial com a IA.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Consultoria</span>
+            <h3>Estratégia de Venda Direta</h3>
+            <p>Precificação e técnicas para desintermediar reservas de OTAs e reter o hóspede no canal próprio.</p>
+          </div>
+          <div class="cartao bom">
+            <span class="num">Suporte Técnico</span>
+            <h3>Acompanhamento Contínuo</h3>
+            <p>Gerente de contas dedicado para calibrar novas regras de feriados e melhorias no fluxo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Posicione a FCB não apenas como software, mas como parceira de faturamento da pousada.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 40: CATÁLOGO DE ACOMODAÇÕES NO WHATSAPP -->
+    <section class="slide" data-cap="Vem aí" data-tit="Catálogo de acomodações">
+      <div class="fit">
+        <div class="olho">Visual que Encanta</div>
+        <h2>O WhatsApp da pousada <b>vira uma vitrine irresistível</b></h2>
+        <p class="lede">O turista quer ver onde vai dormir. A LéIA envia o catálogo visual da pousada: o hóspede navega pelas fotos dos chalés, confere as comodidades e toca em reservar sem sair do WhatsApp.</p>
+        <div class="grade g3">
+          <div class="cartao">
+            <span class="num">Experiência Visual</span>
+            <h3>Fotos em Alta Definição</h3>
+            <p>Mostre a banheira de hidromassagem, a lareira, a vista da serra ou o café servido na varanda.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Comodidades em Destaque</span>
+            <h3>Sem Dúvidas na Decisão</h3>
+            <p>Ícones claros: Cama King, Ar Quente/Frio, Wi-Fi 500MB, Estacionamento Grátis, Pet Friendly.</p>
+          </div>
+          <div class="cartao">
+            <span class="num">Sem Disputa com Vizinhos</span>
+            <h3>Vitrine 100% Sua</h3>
+            <p>Diferente da Booking onde aparecem 20 pousadas concorrentes ao lado, no seu WhatsApp só existe a sua pousada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>A Booking é uma vitrine coletiva que estimula a guerra de preços. O catálogo no WhatsApp é exclusivo da pousada dele.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 41: CATÁLOGO DE ACOMODAÇÕES · AS TELAS -->
+    <section class="slide" data-cap="Vem aí" data-tit="Catálogo de acomodações · as telas">
+      <div class="fit">
+        <div class="olho">Demonstração Visual</div>
+        <h2>Seus chalés, seus preços, <b>a sua marca</b></h2>
+        <div class="fones">
+          <div class="fone-wrap">
+            <div class="fone">
+              <div class="barra"><span>9:41</span><span>100%</span></div>
+              <div class="corpo">
+                <div class="banner-pousada">
+                  <b>Pousada Vila das Pedras</b>
+                  <span>Chalés de Charme &amp; Spa</span>
+                </div>
+                <div class="quarto">
+                  <div class="foto-ph" style="background:linear-gradient(135deg,#0d9488,#065f46)">FOTO · CHALÉ COM HIDRO</div>
+                  <b>Chalé Master Panorama</b>
+                  <div class="desc">Hidro com vista, lareira, cama super king e café na varanda.</div>
+                  <div class="preco">R$ 790 / diária</div>
+                  <div class="btn-reserva">Reservar este Chalé</div>
+                </div>
+                <div class="quarto">
+                  <div class="foto-ph" style="background:linear-gradient(135deg,#334155,#1e293b)">FOTO · SUÍTE JARDIM</div>
+                  <b>Suíte Jardim Pet Friendly</b>
+                  <div class="desc">Acesso direto ao gramado, térrea, ar quente/frio e adega.</div>
+                  <div class="preco">R$ 540 / diária</div>
+                  <div class="btn-reserva">Reservar este Quarto</div>
+                </div>
+              </div>
+            </div>
+            <div style="font-family:var(--mono);font-size:9.5px;color:var(--muted);text-align:center;margin-top:8px">Visual do Hóspede no Celular</div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Mostre como o visual é limpo, elegante e profissional. O hóspede tem uma experiência de compra moderna e segura.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 42: COMO IMPLANTAMOS -->
+    <section class="slide" data-cap="Entrega" data-tit="Como implantamos">
+      <div class="fit">
+        <div class="olho">Implementação Rápida</div>
+        <h2>Como a gente coloca isso <b>de pé na sua pousada</b></h2>
+        <div class="passos">
+          <div class="passo">
+            <span class="q">Etapa 1 · 3 Dias</span>
+            <b>Diagnóstico &amp; Escopo</b>
+            <p>Mapeamos os canais atuais, volume de cotações, fotos das acomodações, políticas de pet/cancelamento e regras de diárias.</p>
+          </div>
+          <div class="passo">
+            <span class="q">Etapa 2 · 7 a 15 Dias</span>
+            <b>Parametrização &amp; Treinamento</b>
+            <p>Configuramos a IA da FCB com o tom da pousada, conectamos os números oficiais e treinamos a sua recepção em sessão prática.</p>
+          </div>
+          <div class="passo">
+            <span class="q">Etapa 3 · Ativação</span>
+            <b>Go-Live Acompanhado</b>
+            <p>A plataforma entra no ar com nosso suporte monitorando as primeiras conversas para garantir que nenhuma reserva fique travada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Deixe claro que o cliente não fica desamparado. A FCB faz todo o trabalho pesado de configuração e treinamento da equipe.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 43: MONTAR A PROPOSTA -->
+    <section class="slide" data-cap="Entrega" data-tit="Montar a proposta">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Transparência Comercial</div>
+            <h2>A proposta é montada <b>aqui com você agora</b></h2>
+            <p class="lede">Nada de "te mando um orçamento por e-mail semana que vem". Definimos juntos o tamanho da sua pousada, o número de quartos e o plano que faz sentido para você sair da reunião com o projeto desenhado.</p>
+            <ul class="itens">
+              <li><b>Planos adequados ao porte:</b><span> desde pousadas intimistas de 6 chalés até operações com mais de 40 acomodações.</span></li>
+              <li><b>Retorno sobre o investimento:</b><span> a plataforma se paga inteira recuperando apenas 2 ou 3 reservas diretas que iriam para a Booking no mês.</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="cartao bom" style="padding:26px">
+              <span class="num">Cálculo de Retorno (ROI)</span>
+              <h3 style="margin-bottom:8px">1 Reserva Direta Salva por Semana</h3>
+              <p style="font-size:13.5px;line-height:1.5;color:var(--navy)">
+                4 reservas recuperadas no mês × R$ 750,00 de diária média = <b>R$ 3.000,00 a mais no caixa</b>.<br><br>
+                O investimento na FCB Automações se paga com folga na primeira quinzena de operação.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Mostre a matemática simples: se a pousada fechar DUAS reservas a mais por mês que perderia no silêncio, a ferramenta já gerou lucro líquido.</li>
+      </div>
+    </section>
+
+    <!-- SLIDE 44: PRÓXIMO PASSO -->
+    <section class="slide" data-cap="Entrega" data-tit="Próximo passo">
+      <div class="fit">
+        <div class="duas">
+          <div>
+            <div class="olho">Começar Agora</div>
+            <h2>Começar é mais rápido do que a <b>próxima reserva perdida</b></h2>
+            <p class="lede">O diagnóstico é gratuito e sem compromisso: mapeamos o fluxo do seu WhatsApp, identificamos os gargalos de atendimento da sua pousada e devolvemos o desenho da solução. Se fizer sentido, colocamos de pé em poucos dias.</p>
+            <a href="https://wa.me/?text=Olá!%20Gostaria%20de%20agendar%20o%20diagnóstico%20da%20minha%20pousada%20com%20a%20FCB%20Automações" target="_blank" class="cta-link">
+              Agendar Diagnóstico da Minha Pousada →
+            </a>
+          </div>
+          <div>
+            <div class="pms-mock" style="text-align:center;padding:32px 20px">
+              <div style="font-size:42px;margin-bottom:12px">🤝</div>
+              <h3 style="font-size:18px;color:var(--navy);margin-bottom:6px">FCB Automações</h3>
+              <p style="font-size:13px;color:var(--muted);max-width:320px;margin:0 auto 16px">Inteligência Artificial &amp; Atendimento para Pousadas, Chalés e Hotéis Boutique</p>
+              <div style="display:inline-block;padding:6px 16px;border-radius:99px;background:var(--teal-light);color:var(--teal);font-weight:700;font-size:11.5px">
+                contato@fcbautomacoes.com.br
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nota"><b>Roteiro do consultor</b>
+        <li>Fechamento direto: “Podemos agendar a sessão técnica de diagnóstico para esta quinta-feira às 14h ou prefere na sexta de manhã?”.</li>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- HUD INFERIOR -->
+  <footer class="hud" aria-label="Controles da apresentação">
+    <div class="hud-nav">
+      <button id="btn-menu" title="Abrir sumário de slides (M)">☰ Sumário</button>
+      <button id="ant" title="Slide anterior (Seta para a esquerda)">← Ant</button>
+      <div class="pos-badge" id="pos-slide">1 / 44</div>
+      <button id="prox" class="btn-primary" title="Próximo slide (Espaço ou Seta para a direita)">Próximo →</button>
+      <button id="btn-notas" title="Ativar modo apresentador com notas (N)">📝 Notas</button>
+      <button id="btn-full" class="desktop-only" title="Alternar tela cheia (F)">⛶</button>
+    </div>
+    <div class="dicas desktop-only">
+      <span>Atalhos: <b>Espaço</b> avança · <b>M</b> sumário · <b>N</b> notas · <b>F</b> tela cheia</span>
+    </div>
+  </footer>
+
+  <!-- MENU SUMÁRIO FLUTUANTE -->
+  <div class="menu" id="menu">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div class="olho">Índice da Apresentação</div>
+        <h2>Sumário de Slides · <b>FCB Automações Pousadas</b></h2>
+      </div>
+      <button onclick="fechaMenu()" style="background:var(--ice);border:1px solid var(--line);border-radius:99px;padding:8px 18px;font-weight:700;cursor:pointer">✕ Fechar</button>
+    </div>
+    <div id="menu-conteudo"></div>
+  </div>
+
+  <!-- MODAL DE ZOOM -->
+  <div class="zoom" id="zoom">
+    <img id="zoom-img" alt="Visualização em alta resolução">
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let i = 0;
+  const deck = document.getElementById('deck');
+  const dotsEl = document.getElementById('dots');
+  const posEl = document.getElementById('pos-slide');
+  const menuCont = document.getElementById('menu-conteudo');
+
+  // CRIAÇÃO DOS DOTS NO TRILHO LATERAL
+  slides.forEach((s, idx) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (idx === 0 ? ' on' : '');
+    d.title = s.dataset.tit || ('Slide ' + (idx + 1));
+    d.onclick = () => vai(idx);
+    dotsEl.appendChild(d);
+  });
+  const dots = Array.from(dotsEl.children);
+
+  // CRIAÇÃO DO SUMÁRIO POR CAPÍTULOS
+  const caps = {};
+  slides.forEach((s, idx) => {
+    const c = s.dataset.cap || 'Geral';
+    if (!caps[c]) caps[c] = [];
+    caps[c].push({ tit: s.dataset.tit || ('Slide ' + (idx + 1)), idx });
+  });
+
+  for (const c in caps) {
+    const capDiv = document.createElement('div');
+    capDiv.innerHTML = `<div class="cap">${c}</div>`;
+    const ol = document.createElement('ol');
+    caps[c].forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<button onclick="vai(${item.idx});fechaMenu()"><i>${(item.idx + 1).toString().padStart(2, '0')}</i><span>${item.tit}</span></button>`;
+      ol.appendChild(li);
+    });
+    capDiv.appendChild(ol);
+    menuCont.appendChild(capDiv);
+  }
+
+  const progressBar = document.getElementById('progress-bar');
+  function pinta(){
+    slides.forEach((s, idx) => {
+      s.classList.toggle('ativo', idx === i);
+    });
+    dots.forEach((d, idx) => {
+      d.classList.toggle('on', idx === i);
+    });
+    posEl.textContent = `${i + 1} / ${total}`;
+    if (progressBar) {
+      progressBar.style.width = (((i + 1) / total) * 100).toFixed(2) + '%';
+    }
+    const s = slides[i];
+    if (s) s.scrollTop = 0;
+    enquadra();
+  }
+
+  window.vai = function(n){
+    if (n < 0) n = 0;
+    if (n >= total) n = total - 1;
+    i = n;
+    pinta();
+  };
+
+  function enquadra(){
+    const s = slides[i];
+    const w = s && s.querySelector('.fit');
+    if (!w) return;
+    w.style.transform = 'none';
+    if (window.innerWidth <= 960) return;
+    const cs = getComputedStyle(s);
+    const disp = s.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const alt = Math.max(w.scrollHeight, w.offsetHeight);
+    if (disp > 0 && alt > disp){
+      const k = Math.max(.60, (disp / alt) * .985);
+      w.style.transform = 'scale(' + k.toFixed(4) + ')';
+    }
+  }
+  window.addEventListener('resize', enquadra);
+
+  const menu = document.getElementById('menu');
+  window.fechaMenu = function(){ menu.classList.remove('on'); };
+  document.getElementById('btn-menu').onclick = () => menu.classList.toggle('on');
+  menu.onclick = e => { if (e.target === menu) fechaMenu(); };
+
+  document.getElementById('prox').onclick = () => vai(i + 1);
+  document.getElementById('ant').onclick = () => vai(i - 1);
+
+  document.getElementById('btn-notas').onclick = e => {
+    const on = deck.classList.toggle('notas');
+    e.currentTarget.setAttribute('aria-pressed', on);
+  };
+
+  document.getElementById('btn-full').onclick = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  };
+
+  // ZOOM
+  const zoom = document.getElementById('zoom');
+  const zimg = document.getElementById('zoom-img');
+  document.querySelectorAll('.zoomable').forEach(im => {
+    im.onclick = () => { zimg.src = im.src; zoom.classList.add('on'); };
+  });
+  zoom.onclick = () => zoom.classList.remove('on');
+
+  // ATALHOS DE TECLADO
+  document.addEventListener('keydown', e => {
+    const digitando = /INPUT|TEXTAREA/.test(e.target.tagName);
+    if (e.key === 'Escape'){ zoom.classList.remove('on'); fechaMenu(); return; }
+    if (menu.classList.contains('on') && e.key !== 'm' && e.key !== 'M') return;
+    if (e.key === 'ArrowRight' || (e.key === ' ' && !digitando)){ e.preventDefault(); vai(i + 1); }
+    if (e.key === 'ArrowLeft'){ vai(i - 1); }
+    if (!digitando && (e.key === 'n' || e.key === 'N')){ document.getElementById('btn-notas').click(); }
+    if (!digitando && (e.key === 'f' || e.key === 'F')){ document.getElementById('btn-full').click(); }
+    if (!digitando && (e.key === 'm' || e.key === 'M')){ menu.classList.toggle('on'); }
+  });
+
+  // NAVEGAÇÃO TOUCH SWIPE (POLEGAR NO CELULAR)
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  document.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (e.target.closest('input[type="range"]') || menu.classList.contains('on') || zoom.classList.contains('on')) return;
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 42) {
+      if (dx < 0) vai(i + 1); // Deslizar para a esquerda -> avança
+      else vai(i - 1);        // Deslizar para a direita -> volta
+    }
+  }, { passive: true });
+
+  // CHIPS INTERATIVOS
+  document.querySelectorAll('.chip').forEach(c => {
+    c.onclick = () => c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'false');
+  });
+
+  // CALCULADORA DO CUSTO DO SILÊNCIO (POUSADAS)
+  const brl = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const num = n => n.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+  const rConv = document.getElementById('r-conv');
+  const rPerc = document.getElementById('r-perc');
+  const rConv2 = document.getElementById('r-conv2');
+  const rTicket = document.getElementById('r-ticket');
+
+  function calcula(){
+    if(!rConv) return;
+    const conv = +rConv.value;
+    const perc = +rPerc.value / 100;
+    const tx = +rConv2.value / 100;
+    const ticket = +rTicket.value;
+    const perdidas = Math.round(conv * perc * tx);
+    const mes = perdidas * ticket;
+    document.getElementById('v-conv').textContent = num(conv);
+    document.getElementById('v-perc').textContent = (+rPerc.value) + '%';
+    document.getElementById('v-conv2').textContent = (+rConv2.value) + '%';
+    document.getElementById('v-ticket').textContent = brl(ticket);
+    document.getElementById('v-qtd').textContent = num(perdidas);
+    document.getElementById('v-mes').textContent = brl(mes);
+    document.getElementById('v-ano').textContent = brl(mes * 12);
+  }
+  [rConv, rPerc, rConv2, rTicket].forEach(r => r && r.addEventListener('input', calcula));
+
+  calcula();
+  pinta();
+})();
+</script>
+
+</body>
+</html>

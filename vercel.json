@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/paulo", "destination": "/index-paulo-gabriel.html" }
+  ]
+}
